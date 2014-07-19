@@ -76,47 +76,61 @@ body{
 	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;	
 }
 
-
-fieldset { 
-	border:none; 
-}
-.contents .signup{
-	margin:10px 130px auto 130px;
-	padding:10px;
-}
-.contents .signup #signupform tr{
-	font-size:14px;	
-	font-family:Verdana, Geneva, sans-serif;
-}
-.contents .signup .titleLabel{
-	font-size:14px;	
-	font-family:Verdana, Geneva, sans-serif;
-	font-weight:bold;
-}
-.contents .signup img{
-	float:right;
-}
-.contents .signup legend {     
-	margin-left: 1em;     
-	padding: 0;     
-	color:#C63;     
-	font-weight: bold;   
-	font-size:22px; 
+/* Terms and Conditions */
+.terms{
+	margin-left:50px;
+	margin-right:50px;
+	text-align:justify;
 	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
-.contents .signup .errorLabel {     
-	color:#F00;
+.terms img{
+	margin-top:-15px;
+	margin-right:10px;
+	margin-bottom:-5px;
+	float:left;
+	width:80px;
+	height:80px;
 }
-.contents .signup .required {     
-	color:#F00;
-	font-size:11px;
-	vertical-align:super;
+.terms h1{
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	color:#00C;
 }
-.contents .signup .descriptionLabel {     
-	font-size:12px;	
+.terms hr{
+	height:2px;
+	border-width:0;
+	background-color:gray;
+}
+
+/* User Registration Form */
+.signup{
+	margin:10px 130px auto 130px;
+	padding:10px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+.signup h2{
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size:24px;
+	color:#036;
+}
+.signup hr{
+	height:2px;
+	border-width:0;
+	background-color:gray;
+}
+.signup h4{
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	text-align:right;
+	padding-right:50px;
+}
+.signup img{
+	float:right;
+}
+.signup #signupform tr{
+	font-size:14px;	
 	font-family:Verdana, Geneva, sans-serif;
 }
-.contents .signup fieldset {     
+.signup fieldset {     
 	float: left;         
 	width: 898px;     
 	margin: 0 0 1.5em 0;     
@@ -124,25 +138,167 @@ fieldset {
 	border: 1px solid #BFBAB0;     
 	background-color: #F2EFE9;     
 }
-.contents .signup .submit {     
+.signup legend {     
+	margin-left: 1em;     
+	padding: 0;     
+	color:#C63;     
+	font-weight: bold;   
+	font-size:22px; 
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.signup .titleLabel{
+	font-size:14px;	
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight:bold;
+}
+.signup .descriptionLabel {     
+	font-size:12px;	
+	font-family:Verdana, Geneva, sans-serif;
+}
+.signup .errorLabel {     
+	color:#F00;
+}
+.signup .required {     
+	color:#F00;
+	font-size:11px;
+	vertical-align:super;
+}
+.signup .submit {     
 	clear:left;
 }
-.contents{
+
+/* Manage Booking for User*/
+.managebooking{
+	margin:10px 130px auto 130px;
+	padding:10px;
 	margin-top: 4px;
-	margin-bottom: 4px;	
+	margin-bottom: 4px;
 }
-.contents hr{
-	height:2px;
-	border-width:0;
-	background-color:gray;
-}
-.contents h2{
+.managebooking h2{
 	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size:24px;
 	color:#036;
 }
-.contents h4{
+.managebooking hr{
+	height:2px;
+	border-width:0;
+	background-color:gray;
+}
+.managebooking table{
+	border-collapse: collapse;
+	margin-top:10px;
+	//font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.managebooking th{
+	padding: 10px;
+	background: #b9c9fe;
+	border-top: 4px solid #aabcfe;
+	border-bottom: 1px solid #fff;
+	color: #039;
+}
+.managebooking td{
+	padding: 8px;
+	background: #e8edff; 
+	border-bottom: 1px solid #fff;
+	color: #669;
+	border-top: 1px solid transparent;
+}
+
+/* Admin Login Form */
+.adminLogin{
+	position:fixed;
+    top: 50%;
+    left: 50%;
+    width:250px;
+	margin-left: -125px; 
+    height:200px;
+    margin-top: -100px;  
+}
+.adminLogin h2{
 	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	text-align:right;
-	padding-right:50px;
+	font-size:24px;
+	color:#036;
+}
+.adminLogin hr{
+	height:2px;
+	border-width:0;
+	background-color:gray;
+}
+.adminLogin .titleLabel{
+	font-size:14px;	
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight:bold;
+}
+.adminLogin table{
+	padding-top:7px;
+}
+
+/* Admin Home */
+.adminHome{
+	margin:4px 70px auto 70px;
+	padding:5px;
+}
+.adminHome img{
+	margin-right:10px;
+	margin-bottom:-10px;
+	float:left;
+	width:90px;
+	height:90px;
+}
+.adminHome h1{
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	color:#900;
+}
+.adminHome hr{
+	height:2px;
+	border-width:0;
+	background-color:gray;
+}
+.adminHome .menu{
+	float:left;
+	margin:20px 0px auto 0px;
+	height:450px;
+	width:23%;
+	border:1px solid #BFBAB0;
+}
+.adminHome .menu .menuList{	
+	margin-left:20px;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.adminHome .result{
+	float:right;
+	margin-top:20px;
+	height:450px;
+	width:75%;
+	border:1px solid #BFBAB0;
+	overflow:auto;
+}
+.adminHome .result .adminContent{
+	margin-left:20px;
+	margin-right:20px;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.adminHome .result .adminContent table{
+	border-collapse: collapse;
+	margin-top:10px;
+}
+.adminHome .result .adminContent th{
+	padding: 10px;
+	background: #b9c9fe;
+	border-top: 4px solid #aabcfe;
+	border-bottom: 1px solid #fff;
+	color: #039;
+}
+.adminHome .result .adminContent td{
+	padding: 8px;
+	background: #e8edff; 
+	border-bottom: 1px solid #fff;
+	color: #669;
+	border-top: 1px solid transparent;
+}
+.adminHome .footerAdmin{
+	clear:both;
+	padding-top:5px;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size:17px;
 }
