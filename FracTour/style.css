@@ -76,6 +76,138 @@ body{
 	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;	
 }
 
+/* Tour Information */
+.tourpackages{
+	margin-left:70px;
+	margin-right:70px;	
+}
+.tourpackages h1{
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;	
+}
+.tourpackages h2{
+	font-family:"Monotype Corsiva", sans-serif;
+	color:#F03;
+	font-size:40px;
+}
+.tourpackages p, li{
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	text-align:justify;
+	font-size:18px;
+}
+.tourpackages img{
+	width:100%;
+}
+
+/* User Login */
+.mask {
+	display: none;
+	background: #000; 
+	position: fixed; left: 0; top: 0; 
+	z-index: 10;
+	width: 100%; height: 100%;
+	opacity: 0.8;
+	z-index: 999;
+}
+.loginpopup{
+	display:none;
+	background: #333;
+	padding: 10px; 	
+	border: 2px solid #ddd;
+	float: left;
+	font-size: 1.2em;
+	position: fixed;
+	top: 50%; 
+	left: 50%;	
+	width:220px;
+	margin-left: -110px; 
+    height:160px;
+    margin-top: -80px;	
+	z-index: 99999;
+	box-shadow: 0px 0px 20px #999;
+	-moz-box-shadow: 0px 0px 20px #999; /* Firefox */
+    -webkit-box-shadow: 0px 0px 20px #999; /* Safari, Chrome */
+	border-radius:3px 3px 3px 3px;
+    -moz-border-radius: 3px; /* Firefox */
+    -webkit-border-radius: 3px; /* Safari, Chrome */
+}
+img.closeBtn {
+	float: right; 
+	margin: -28px -28px 0 0;
+	width:32px;
+	height:32px;
+}
+.signinform .textbox label { 
+	display:block; 
+	padding-bottom:7px; 
+}
+.signinform .textbox span { 
+	display:block;
+}
+.signinform span { 
+	color:#999; 
+	font-size:15px; 
+	line-height:18px;
+	padding-bottom:5px;
+	font-family:"Times New Roman", Times, serif;
+}
+.signinform .textbox input { 
+	background:#666666; 
+	border-bottom:1px solid #333;
+	border-left:1px solid #000;
+	border-right:1px solid #333;
+	border-top:1px solid #000;
+	color:#fff; 
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+	font:13px Arial, Helvetica, sans-serif;
+	padding:6px 6px 4px;
+	width:200px;
+}
+
+/* About Us Page */
+.about{
+	margin:10px 130px auto 130px;
+	padding:10px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+.about h2{
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size:24px;
+	color:#036;
+	margin-bottom:-50px;
+}
+.about hr{
+	height:2px;
+	border-width:0;
+	background-color:gray;
+}
+.about p{
+	text-align:justify;
+}
+.about h3{
+	font-size:18px;
+}
+
+/* Contact Us Page */
+.contact{
+	margin:10px 130px auto 130px;
+	padding:10px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+.contact h2{
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size:24px;
+	color:#036;
+}
+.contact hr{
+	height:2px;
+	border-width:0;
+	background-color:gray;
+}
+
 /* Terms and Conditions */
 .terms{
 	margin-left:50px;
@@ -187,7 +319,6 @@ body{
 .managebooking table{
 	border-collapse: collapse;
 	margin-top:10px;
-	//font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 .managebooking th{
 	padding: 10px;

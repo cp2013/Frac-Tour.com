@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="images/FracTour_Logo.png" rel="shortcut icon" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<link href="nivo-slider.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="slider_style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="jquery-1.4.4.min.js"></script> 
+<script type="text/javascript" src="jquery.nivo.slider.pack.js"></script> 
+<script type="text/javascript" src="js/smoothscroll.js"></script>
+<title>FracTour - Tour Reservations</title>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		// show popup when you click on the link
+		$('.signin').click(function(event){
+			event.preventDefault(); // disable normal link function so that it doesn't refresh the page			
+			$('.mask').show();
+			$('.loginpopup').show(); //display your popup and set height to the page height
+		});
+	 
+		// hide popup when user clicks on close button or outside popup box
+		$('.close, .mask').click(function(){
+			$('.mask, .loginpopup').hide(); // hide the overlay
+			//document.getElementsByClassName('warningtxt')[0].style.display = 'none';
+			return false;
+		});
+		
+		// prevents the overlay from closing if user clicks inside the popup box
+		$('.loginpopup').click(function(){
+			return false;
+		}); 
+	});
+</script>
+</head>
+
+<body>
+<div class="header">
+<a href="index.html"><img src="images/FracTour_Logo.png" width="80" height="70" class="lfloat"/></a>
+<nav id="main-id">
+	<ul>
+        <li><a href="#content1" class="smoothScroll">Home</a></li>
+        <li><a href="#content2" class="smoothScroll">Book</a></li>
+        <li><a href="#content3" class="smoothScroll">About Us</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#" class="signin">Login</a></li>         
+    </ul>
+</nav>
+</div>
+
+<div class="mask">
+    <div class="loginpopup">
+        <a href="#" class="close"><img src="images/closeBtn.png" class="closeBtn" title="Close Window" alt="Close" /></a>
+        <form name="userloginform" method="post" action="" class="signinform">
+        <fieldset class="textbox">
+            <label class="username">
+                <span>Username : </span>
+                <input type="text" id="username" name="username">
+            </label>
+            <label class="password">
+                <span>Password : </span>
+                <input type="password" id="password" name="password">
+            </label>
+            <span><label class="warningtxt" style="color:#F00; display:none;">Invalid Username and/or Password</label></span>
+            <button type="button" class="submitBtn" onclick="signin()">Sign In</button>
+        </fieldset>
+        </form>
+    </div>
+</div>
+
+<div id="content1" class="container">
+    <div class="slider-wrapper">
+        <div id="slider" class="nivoSlider">
+            <img src="images/image1.jpg" title="Tired during hiking? Book a hotel in a mountain instead!">
+            <img src="images/image2.jpg" title="Euginia Lagoon is now open for reservations!"/>
+            <img src="images/image3.jpg" title="Want a good scenery and calm feeling?"/>
+            <img src="images/image4.jpg" title="Living near a lake is now possible for you!" />
+        </div>
+    </div>
+    <div id="htmlcaption" class="nivo-html-caption"> 
+      <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+    </div>
+	
+   
+	<script type="text/javascript">
+        $(window).load(function() {
+            $('#slider').nivoSlider();
+        });
+    </script>
+</div>
+
+<div id="content2">
+    <img src="images/blue.jpeg" width="1024" height="500px"/>
+</div>
+<div id="content3">
+
+</div>
+<div id="footer">
+	 <p>© Copyright 2014. All Rights Reserved.</p>	
+</div>
+</body>
+</html>
