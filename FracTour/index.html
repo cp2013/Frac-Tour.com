@@ -29,13 +29,17 @@
 			return false;
 		}); 
 	});
+	
+	function signin(){
+		$('.mask, .loginpopup').hide();
+	}
 </script>
 </head>
 
 <body>
 <div id="mainContent">
     <div class="header" style="z-index:1;">
-    <!--<a href="#" target="content"><img src="images/FracTour_Logo.png" width="100" height="90" class="lfloat"/></a>-->
+    <a href="#" target="content"><img src="images/FracTour Logo.png" width="50" height="40" class="lfloat"/></a>
     <nav id="main-id">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -133,6 +137,7 @@
 </div>-->
 
 <div id="content1">
+<!--
     <center>
 	<div class="slider-wrapper">
         <div id="slider" class="nivoSlider">
@@ -152,19 +157,35 @@
         $(window).load(function() {
             $('#slider').nivoSlider();
         });
-    </script>
+    </script>-->
+    <h2>Top Destination Around the World</h2>
+    <section>
+        <figure>
+        	<a href="PulauUbin.html" target="_blank">
+            <img src="images/PulauUbin.jpg" width="500" height="230" alt="" />
+            <figcaption>Pulau Ubin, Singapore</figcaption>
+            </a>
+        </figure>
+        <figure>
+        	<a href="Semarang.html" target="_blank">
+            <img src="images/Semarang.jpg" width="500" height="230" alt="" />
+            <figcaption>Semarang, Central Java, Indonesia</figcaption>
+            </a>
+        </figure>
+        <figure>
+        	<a href="#">
+            <img src="images/fuji.jpg" width="500" height="230" alt="" />
+            <figcaption>Mt. Fuji, Honshu Island, Japan</figcaption>
+            </a>
+        </figure>
+        <figure>
+        	<a href="#">
+            <img src="images/paris.jpg" width="500" height="230" alt="" />
+            <figcaption>Eiffel Tower, Paris, France</figcaption>
+            </a>
+        </figure>       
+	</section>
 </div>
-<!--
-<div id="content2">
-    <img src="images/blue.jpeg" width="1024" height="500px"/>
-    <img src="images/blue.jpeg" width="1024" height="500px"/>
-</div>
-
-<div id="content3">
-
-</div>-->
-
-
 <div id="footer">
 	<div class="border">
         <a href="index.html">Home</a>

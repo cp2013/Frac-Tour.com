@@ -7,9 +7,73 @@
 <link href="nivo-slider.css" rel="stylesheet" type="text/css" media="screen" />
 <link href="slider_style.css" rel="stylesheet" type="text/css" media="screen" />
 <title>FracTour | About Us</title>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// show popup when you click on the link
+		$('.signin').click(function(event){
+			event.preventDefault(); // disable normal link function so that it doesn't refresh the page			
+			$('.mask').show();
+			$('.loginpopup').show(); //display your popup and set height to the page height
+		});
+	 
+		// hide popup when user clicks on close button or outside popup box
+		$('.close, .mask').click(function(){
+			$('.mask, .loginpopup').hide(); // hide the overlay
+			//document.getElementsByClassName('warningtxt')[0].style.display = 'none';
+			return false;
+		});
+		
+		// prevents the overlay from closing if user clicks inside the popup box
+		$('.loginpopup').click(function(){
+			return false;
+		}); 
+	});
+	
+	function signin(){
+		$('.mask, .loginpopup').hide();
+	}
+</script>
 </head>
 
 <body>
+	<div id="mainContent">
+    <div class="header" style="z-index:1; position:relative; opacity:1;">
+    <a href="#" target="content"><img src="images/FracTour Logo.png" width="50" height="40" class="lfloat"/></a>
+    <nav id="main-id">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Tour</a></li>
+            <li><a href="about_us.html" target="_blank">About Us</a></li>
+            <li><a href="contact_us.html" target="_blank">Contact Us</a></li>
+            <li><a href="#">Help</a></li>
+			<li class="right"><a href="#" class="signin">Login</a></li>
+            <li><a href="user_registration.html" target="_blank">Register</a></li>
+            <li><a href="admin_login.html" target="_blank">Admin</a></li>           
+        </ul>
+    </nav>
+    </div>
+    
+    <div class="mask">
+        <div class="loginpopup">
+            <a href="#" class="close"><img src="images/closeBtn.png" class="closeBtn" title="Close Window" alt="Close" /></a>
+            <form name="userloginform" method="post" action="" class="signinform">
+            <fieldset class="textbox">
+                <label class="username">
+                    <span>Username : </span>
+                    <input type="text" id="username" name="username">
+                </label>
+                <label class="password">
+                    <span>Password : </span>
+                    <input type="password" id="password" name="password">
+                </label>
+                <span><label class="warningtxt" style="color:#F00; display:none;">Invalid Username and/or Password</label></span>
+                <button type="button" class="submitBtn" onclick="signin()">Sign In</button>
+            </fieldset>
+            </form>
+        </div>
+    </div>    
+</div>
+
     <div class="about">
     	<h2>About Us</h2>
         <hr /><br />

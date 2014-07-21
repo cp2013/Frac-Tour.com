@@ -5,6 +5,11 @@
 <link href="images/FracTour_Logo.png" rel="shortcut icon" />
 <link href="style.css" rel="stylesheet" type="text/css"/>
 <title>FracTour | Admin Login</title>
+<script type="text/javascript">
+	function login(){
+		window.location="admin_home.html";
+	}
+</script>
 </head>
 
 <body>
@@ -28,7 +33,7 @@
             <tr><td height="10"></td></tr>
             
             <tr>
-            <td colspan="3" align="center"><input name="submit" type="button" value="SUBMIT"/></td>
+            <td colspan="3" align="center"><input name="submit" type="button" value="SUBMIT" onclick="login()"/></td>
        	  </tr>
     	</table>
     </form>
