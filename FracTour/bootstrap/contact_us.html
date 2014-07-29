@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FracTour | Welcome</title>
+<link href="images/FracTour_Logo.png" rel="shortcut icon" />
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/signin.js"></script>	
+<style>
+	#map_canvas {
+		width: 500px;
+		height: 400px;
+	}
+</style>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+	function initialize() {
+		var map_canvas = document.getElementById('map_canvas');
+		var map_options = {
+		  center: new google.maps.LatLng(44.5403, -78.5463),
+		  zoom: 8,
+		  mapTypeId: google.maps.MapTypeId.ROADMAP
+	}
+		var map = new google.maps.Map(map_canvas, map_options)
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+<body>
+<div class="container"  style="height:10%; width:100%; margin:0; padding:0;"><!--Wrapping the whole elements in order to be responsive-->
+
+<!-- The first section in the homepage -->
+
+    <div class="mainContent" style="position:relative; width:100%;">	<!-- Wrapping the navigation bar START -->
+    
+        <div class="navbar navbar-inverse navbar-static-top" style="position:absolute; width:100%; z-index:1;"><!-- Navigation Bar START -->
+        
+            <div class="container"><!-- Container START -->
+                
+                <a href="#" target="content"><img src="images/FracTour_Logo.png" width="50" height="40" class="lfloat"/></a>
+                
+                
+                <!-- Displaying 3 icon bars for small screen dimensions -->
+                <button class= "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Navbar for small screen dimensions -->
+                <div class="collapse navbar-collapse navHeaderCollapse"><!-- collapse navbar START -->
+                    
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html" >Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    
+                        <li><a href="#" class="signin">Login</a></li>
+                        <li><a href="user_registration.html" target="_blank">Register</a></li>
+                        <li><a href="admin_login.html" target="_blank">Admin</a></li> 
+                    
+                    </ul>
+                
+                </div><!-- Collapse navbar END -->
+                
+            </div><!-- Container END -->
+        
+        </div><!-- Navigation Bar END -->
+        
+    <div class="mask">
+        <div class="loginpopup">
+            <a href="#" class="close"><img src="images/closeBtn.png" class="closeBtn" title="Close Window" alt="Close" /></a>
+            <form name="userloginform" method="post" action="" class="signinform">
+            <fieldset class="textbox">
+                <label class="username">
+                    <span>Email : </span>
+                    <input type="text" id="username" name="username">
+                </label>
+                <label class="password">
+                    <span>Password : </span>
+                    <input type="password" id="password" name="password">
+                </label>
+                <span><label class="warningtxt" style="color:#F00; display:none;">Invalid Username and/or Password</label></span>
+                <button type="button" style="margin-left:65px;" onclick="signin()">Sign In</button>			    
+                <div class="separator">               
+                    <p>------------- OR -------------</p>              
+                </div>
+				<img src="images/login-facebook.png" style="width:202px;">
+            </fieldset>
+            </form>
+        </div>
+    </div>    
+    
+    </div><!--Wrapping the navigation bar END -->
+</div>    
+<!-- The first section in the homepage END-->
+        
+<!-- The second section in the homepage START-->
+    <div class="container" style="position:relative; width:100%; padding:0;">
+        
+        <div class="container" style="position:relative; width:100%;">
+			<h2>Contact Us</h2>
+			<hr />
+			<br />
+			<p>If you have any questions, please feel free to contact us</p>
+			<br />
+			<table width="520">
+				<tr>
+					<td width="116"><strong>Email</strong></td>
+					<td width="21">:</td>
+					<td width="367"><a href = "mailto:fractour@gmail.com">fractour@gmail.com</a></td>
+				</tr>
+				<tr>
+					<td><strong>Facebook</strong></td>
+					<td>:</td>
+					<td><a href="https://www.facebook.com/fractour2014" target="_blank">Frac Tour</a></td>
+				</tr>
+				<tr>
+					<td><strong>Twitter</strong></td>
+					<td>:</td>
+					<td><a href="https://twitter.com/fractour" target="_blank">@FracTour</a></td>
+				</tr>
+				<tr>
+					<td><strong>Instagram</strong></td>
+					<td>:</td>
+					<td><a href="http://instagram.com/fractour" target="_blank">fractour</a></td>
+				</tr>
+			</table> 
+		</div>
+     <div class="container" style="padding-left:30%;">    
+     	<div id="map_canvas"></div>
+	</div>        
+    <hr/>
+    <!-- Footer section -->
+	
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h6>Copyright &copy; 2014 Frac-Tour</h6>
+                </div>
+                <div class="col-sm-4">
+                    <h6>About The Website</h6>
+                    <p>This website is created with the purpose of completing Software Engineering project provided by James Cook University</p>
+                
+                </div>
+                <div class="col-sm-2">
+                    <h6>Navigation</h6>
+                    <ul class="unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html">Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h6>Follow Us</h6>
+						<a href="https://www.facebook.com/fractour2014" target="_blank"><img src="images/facebook_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="https://twitter.com/fractour" target="_blank"><img src="images/twitter_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="http://instagram.com/fractour" target="_blank"><img src="images/instagram_icon.png" style="width:30px; height:27px;"/></a>
+                </div>
+                
+                <div class="col-sm-2">
+                    <h6>Coded by &copy; IDETIVE</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--End wrapping the whole elements-->
+
+
+	<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>	
+	
+</body>
+
+</html>

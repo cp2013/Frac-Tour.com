@@ -8,6 +8,7 @@ body{
 /* Container for Navigation Bar */
 #mainContent{
 	position:relative;		
+	max-width:100%;
 }
 
 /* Navigation Bar styling*/
@@ -74,6 +75,10 @@ body{
 #full-bg .promo_item{
 	position:absolute;
 	width:100%;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
 	height:677px;
 	
 	-webkit-animation-name: cfFadeInOut;
