@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FracTour | Korea Jeju</title>
+<link href="images/FracTour_Logo.png" rel="shortcut icon" />
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/signin_signout.js"></script>		
+<style>
+.container .row .heading{
+	text-transform:uppercase;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#999;	
+}
+
+.container .row .heading-content{
+	text-transform:uppercase;
+	font-family:Verdana, Geneva, sans-serif;
+}
+
+.container .jumbotron p{
+	font-size:15px;
+	text-align:justify;
+}
+.container .jumbotron .row .col-md-7{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;	
+}
+.nav-tabs > li > a{
+	color:black;
+	font-family:Verdana, Geneva, sans-serif;	
+}
+.tab-content {
+	background-color:white;
+	padding:10px;
+	padding-left:15px;
+	border:1px solid #ddd;
+
+}
+.tab-content #itinerary > h5{
+	margin-bottom:0;
+}
+.tab-content #itinerary > p{
+	font-size:13px;		
+	margin-top:5px;
+	padding:0;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+	.tour {
+		width: 100%;
+	}
+
+	.tour-label {
+		width:auto;	
+		left:15px;
+		right:15px;
+	}
+}
+</style>
+</head>
+<body>
+<div class="container"  style="width:100%; margin:0; padding:0;"><!--Wrapping the whole elements in order to be responsive-->
+    <div class="mainContent" style="position:relative; width:100%;">	<!-- Wrapping the navigation bar START -->
+    
+        <div class="navbar navbar-inverse navbar-static-top"><!-- Navigation Bar START -->
+        
+            <div class="container"><!-- Container START -->
+                
+                <a href="index.html"><img src="images/FracTour_Logo.png" width="50" height="40" class="lfloat"/></a>
+                
+                
+                <!-- Displaying 3 icon bars for small screen dimensions -->
+                <button class= "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Navbar for small screen dimensions -->
+                <div class="collapse navbar-collapse navHeaderCollapse"><!-- collapse navbar START -->
+                    
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html" >Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    
+                        <li id="statusbox"><a href="#" class="signin">Login</a></li>
+                        <li><a href="user_registration.html" target="_blank">Register</a></li>
+                        <li><a href="admin_login.html" target="_blank">Admin</a></li> 
+                    
+                    </ul>
+                
+                </div><!-- Collapse navbar END -->
+                
+            </div><!-- Container END -->
+        
+        </div><!-- Navigation Bar END -->
+        
+    <div class="mask">
+        <div class="loginpopup">
+            <a href="#" class="close"><img src="images/closeBtn.png" class="closeBtn" title="Close Window" alt="Close" /></a>
+            <form name="userloginform" method="post" action="" class="signinform">
+            <fieldset class="textbox">
+                <label class="email">
+                    <span>Email : </span>
+                    <input type="text" id="email" name="email">
+                </label>
+                <label class="password">
+                    <span>Password : </span>
+                    <input type="password" id="password" name="password">
+                </label>
+                <span><label class="warningtxt" style="color:#F00; display:none;">Invalid Email/Password</label></span>
+                <button type="button" style="margin-left:65px;" onclick="signin()">Sign In</button>			    
+                <div class="separator">               
+                    <p>------------- OR -------------</p>              
+                </div>
+				<img src="images/login-facebook.png" style="width:202px;">
+            </fieldset>
+            </form>
+        </div>
+    </div>    
+    
+    </div><!--Wrapping the navigation bar END -->
+</div>    		 
+<div class="container">
+	<div class="row" style="padding:5px;">
+    	<h3 class="heading">Tour Destinations</h3>
+        <hr/>
+    </div>    
+
+    <div class="jumbotron">
+        <div class="row">
+        	<div class="col-md-8">
+                <h3 class="heading-content">Korea Jeju <span style="color:#F90; text-transform:lowercase;">(7 Days 6 Nights)</span> </h3>
+                <p style="font-family:Arial, Helvetica, sans-serif; color:#F90; font-size:22px;"><strong>Price: $1800</strong></p>
+            </div>
+            <div class="col-md-4">
+            	<img src="images/book-now.png">
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-5" style="text-align:center;">
+                <img src="images/mt-sorak.jpg" style="max-width:98%; max-height:90%" height="320" class="img-rounded"/>
+            </div>
+            <div class="col-md-7" style="padding-top:10px;">
+                <table width="520" class="table-responsive" >
+                <tr>
+                    <td width="116"><strong>Countries</strong></td>
+                    <td width="21">:</td>
+                    <td width="367">South Korea</td>
+                </tr>
+                <tr>
+                    <td><strong>State / Cities</strong></td>
+                    <td>:</td>
+                    <td>Seoul, Jeju Island</td>
+                </tr>
+                <tr>
+                    <td><strong>Category</strong></td>
+                    <td>:</td>
+                    <td>Family Trip</td>
+                </tr>
+                <tr>
+                    <td><strong>Travel Dates</strong></td>
+                    <td>:</td>
+                    <td>Valid until 10 November 2014</td>
+                </tr>
+                <tr>
+                    <td><strong>Duration</strong></td>
+                    <td>:</td>
+                    <td>7 Days 6 Nights</td>
+                </tr>
+                <tr>
+                    <td><strong>Tour Code</strong></td>
+                    <td>:</td>
+                    <td>KR76</td>
+                </tr>                               
+                </table> 
+                <hr style="border-top: 1px solid #CCC;">
+                <h4>Highlights</h4>
+                <ul>
+                    <li>Look around the city from the Observation Platform</li>
+                    <li>Enjoy the ride in Everland, the largest theme park in Korea</li>
+                    <li>Visit the Blue House, the center of Korean politics</li>
+                    <li>Let's go for shopping in Dongdaemun Market and Myeongdong</li>
+                    <li>Explore the Mystery Road that deny the gravity force in Jeju Island</li>
+                </ul>
+                <hr style="border-top: 1px solid #CCC;">
+            </div>
+        </div>
+        
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#itinerary" role="tab" data-toggle="tab">ITINERARY</a></li>
+            <li><a href="#price" role="tab" data-toggle="tab">PRICE DETAILS</a></li>
+            <li><a href="#disclaimer" role="tab" data-toggle="tab">DISCLAIMER</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="itinerary">
+	            <h5><strong>Day 1 : ARRIVAL INCHEON / MT.SORAK (L, D)</strong></h5>
+                <p>The Odusan Unification Observatory opened to the public in 1992. From this Observation Platform, Songaksan Diamond Mountains in the city of Gyeseongi and 63 Building in Seoul are visible. Products from North Korea can be purchased. Paju English Village, all facilities have been newly built to simulate a village in an English-speaking country. Paju Camp is a model English village created by Gyeonggi Province. Next to the riding of Rail Bike enjoy the surrounding scenery. Petite France, the village contains a memorial hall dedicated to Saint-Exupery, the author of the celebrated French novel, Le Petit Prince (1943) and as such it is called the Little Prince theme park.</p>
+                
+	            <h5><strong>Day 2 : MT.SORAK / PYEONGCHANG (B, L, D)</strong></h5>
+                <p>Mt. Sorak National Park, the mountain was named Sorak because the snow would not melt for a long time and its rock stay white like snow. Visiting to Osaek Mineral Spring, Seongguksa Temple, The Fairy Pond. Shinheungsa Temple is an ancient temple with deep historical significance and its beautiful scenery. Jumunjin Local Market is an integrated market, dried fish market, a variety of businesses and stores sashimi market bazaar. Ski Jump Tower Observatory that stands approximately 90m above the ground in the olympic park. this is where you can enjoy the breathtaking view of the majestic Dagwallyeong and beautiful Alpensia.</p>
+            	
+                <h5><strong>Day 3 : PYEONGCHANG / SEOUL (B, D) </strong></h5>
+                <p>The largest theme park in Korea, Everland offers special events for every season. Visitors love the wide variety of rides, and it is reputable for its friendly attendants, good service and hospitality. If you are visiting with your children, make sure to stop here for some unforgettable fun. Dongdaemun Market which is Korea's representative wholesale and retail market. Fantastic Show, Heart-beating sounds of powerful percussion rhythm and Heart-filling melodies of beautiful Gukak!</p>
+	            
+                <h5><strong>Day 4 : SEOUL (B, L)</strong></h5>
+                <p>Deoksugung Palace, a palace famous for its elegant stone-wall road. It is the only one that has western buildings beside it, and it adds to the uniqueness of the scenery. The Blue House the symbol of the Blue House, which is at the center of Korean politics. You will also stop by at the Ginseng Center, Healthy Liver Shop, Cosmetic Duty Free Shop. Red Fine Outlet, Remarkable hypoglycemic effects is shown to those who have high blood sugar levels, but no side effects to those who have normal levels. Superior effects with on diet and beauty treatment. Pine essential oil contains compinents with strong lipolysis effects. After shopping spree at the famous Myeongdong.</p>
+                
+                <h5><strong>Day 5 : SEOUL / JEJU ISLAND (B, L, D)</strong></h5>
+                <p>Arrival at Gimpo Airport transfer for domestic flight to Jeju Island. Upon arrival Jeju Island visit to Yongduam Dragon Head Rock is a volcanic rock that was created from an eruption about two million years ago. Mysterious Road It will certainly make you deny Newton's theory on Gravity. Teseum Safari it is one of the first museums in the world to exhibit all sorts of teddy bears and stitched dolls including ones shaped like wildlife animals, marine animals, flowers, birds, and more.</p>
+                
+                <h5><strong>Day 6 : JEJU ISLAND (B, L, D)</strong></h5>
+                <p>Seongsan Ilchulbaong Peak is a land mass that Is above 182 meters above sea level. Seopjikoji is located at the end of the eastern shore of Jeju-do island. At Seopjikoji, there is a cliff by the seashore, where there is not a single tree, only a large field of grass, and on the seashore, there is a rock called "seondol" sticking out. At Seongeup Folk Village, there are many cultural properties such as residential houses, Confucian shrines and schools, ancient government offices, stone statues, millstones (run by horse or ox), fortress ruins, stone monuments, & cultural assets such as folkplays, native foods, local folk craftsmanship. The Trick Art Museume exhibit arts on walls and floors are rendered in three dimensions. Exhibitions consist of seven themed sections: Parody Zone (showing famous paintings and sculptures), Animal Zone, Jurassic Zone, Aquarium Zone, Egypt Zone, Magic Zone, and Illusion Zone. Shopping awaits you was we commence to Sinjeju General Market and central underground shopping arcade.</p>
+                
+                <h5><strong>Day 7 : JEJU ISLAND | SEOUL | SINGAPORE (B)</strong></h5>
+                <p>Arrival at Jeju Airport transfer for domestic flight to Gimpo Airport. Upon arrival Jeju Island visit to Grocery shop. you will stop by Local Product Shop and then transfer to the airport for your flight back to Singapore.</p>
+                
+                <div class="row">
+                    <div class="col-md-12" style="text-align:center;">
+                        <a href="itinerary/korea_jeju.pdf" target="_blank"><img src="images/pdf-download.jpg" title="Download this itinerary as PDF File"></a>
+                    </div>
+                    <div class="col-md-1""></div>          
+                </div>
+                
+            </div>
+            <div class="tab-pane" id="price">Price Details</div>
+            <div class="tab-pane" id="disclaimer">Disclaimer</div>
+        </div>
+        <!-- End Tabs -->
+    </div>
+
+</div>
+    <!-- Footer section -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h6>Copyright &copy; 2014 Frac-Tour</h6>
+                </div>
+                <div class="col-sm-4">
+                    <h6>About The Website</h6>
+                    <p>This website is created with the purpose of completing Software Engineering project provided by James Cook University</p>
+                
+                </div>
+                <div class="col-sm-2">
+                    <h6>Navigation</h6>
+                    <ul class="unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html">Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h6>Follow Us</h6>
+                        <a href="https://www.facebook.com/fractour2014" target="_blank"><img src="images/facebook_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="https://twitter.com/fractour" target="_blank"><img src="images/twitter_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="http://instagram.com/fractour" target="_blank"><img src="images/instagram_icon.png" style="width:30px; height:27px;"/></a>
+                </div>
+                
+                <div class="col-sm-2">
+                    <h6>Coded by &copy; IDETIVE</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+</body>
+
+</html>

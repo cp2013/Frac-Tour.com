@@ -13,12 +13,12 @@ function validateForm(theForm){
 	var valPhoneCode = validatePhoneCode(theForm.phonecode);
 	var valPhone = validatePhone(theForm.phone);
 	var valCheckBox = validateCheckBox(theForm.checkbox);
-	
-	/*if(valUsername && valPassword && valConfirmPassword && valFName && valLName && valAge && valPhone && valEmail){ 
+		
+	/*if(valEmail && valPassword && valConfirmPassword && valFName && valLName && valDate && valMonth && valYear && valNationality && valCountry && valZipCode && valPhoneCode && valPhone && valCheckBox){ 
 			$.ajax({
 				type:"POST",
 				url:"sign_up.php",
-				data:{"username":theForm.username.value, "password":theForm.password.value, "firstname":theForm.firstname.value, "lastname":theForm.lastname.value, "age":theForm.age.value, "phone":theForm.phone.value, "email":theForm.email.value},
+				data:{"email":theForm.email.value, "password":theForm.password.value, "title":theForm.title.value, "firstname":theForm.firstname.value, "lastname":theForm.lastname.value, "dob":theForm.date.value + theForm.month.value + theForm.year.value, "nationality":theForm.nationality.value, "address":theForm.address.value, "country":theForm.country.value, "postalcode":theForm.zipcode.value, "phone":theForm.phonecode.value + theForm.phone.value},
 				dataType: "json",
 				success: function(response){
 					alert(response);

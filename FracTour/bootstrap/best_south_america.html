@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FracTour | Best of South America</title>
+<link href="images/FracTour_Logo.png" rel="shortcut icon" />
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/signin_signout.js"></script>		
+<style>
+.container .row .heading{
+	text-transform:uppercase;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#999;	
+}
+
+.container .row .heading-content{
+	text-transform:uppercase;
+	font-family:Verdana, Geneva, sans-serif;
+}
+
+.container .jumbotron p{
+	font-size:15px;
+	text-align:justify;
+}
+.container .jumbotron .row .col-md-7{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;	
+}
+.nav-tabs > li > a{
+	color:black;
+	font-family:Verdana, Geneva, sans-serif;	
+}
+.tab-content {
+	background-color:white;
+	padding:10px;
+	padding-left:15px;
+	border:1px solid #ddd;
+
+}
+.tab-content #itinerary > h5{
+	margin-bottom:0;
+}
+.tab-content #itinerary > p{
+	font-size:13px;		
+	margin-top:5px;
+	padding:0;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+	.tour {
+		width: 100%;
+	}
+
+	.tour-label {
+		width:auto;	
+		left:15px;
+		right:15px;
+	}
+}
+</style>
+</head>
+<body>
+<div class="container"  style="width:100%; margin:0; padding:0;"><!--Wrapping the whole elements in order to be responsive-->
+    <div class="mainContent" style="position:relative; width:100%;">	<!-- Wrapping the navigation bar START -->
+    
+        <div class="navbar navbar-inverse navbar-static-top"><!-- Navigation Bar START -->
+        
+            <div class="container"><!-- Container START -->
+                
+                <a href="index.html"><img src="images/FracTour_Logo.png" width="50" height="40" class="lfloat"/></a>
+                
+                
+                <!-- Displaying 3 icon bars for small screen dimensions -->
+                <button class= "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Navbar for small screen dimensions -->
+                <div class="collapse navbar-collapse navHeaderCollapse"><!-- collapse navbar START -->
+                    
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html" >Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    
+                        <li id="statusbox"><a href="#" class="signin">Login</a></li>
+                        <li><a href="user_registration.html" target="_blank">Register</a></li>
+                        <li><a href="admin_login.html" target="_blank">Admin</a></li> 
+                    
+                    </ul>
+                
+                </div><!-- Collapse navbar END -->
+                
+            </div><!-- Container END -->
+        
+        </div><!-- Navigation Bar END -->
+        
+    <div class="mask">
+        <div class="loginpopup">
+            <a href="#" class="close"><img src="images/closeBtn.png" class="closeBtn" title="Close Window" alt="Close" /></a>
+            <form name="userloginform" method="post" action="" class="signinform">
+            <fieldset class="textbox">
+                <label class="email">
+                    <span>Email : </span>
+                    <input type="text" id="email" name="email">
+                </label>
+                <label class="password">
+                    <span>Password : </span>
+                    <input type="password" id="password" name="password">
+                </label>
+                <span><label class="warningtxt" style="color:#F00; display:none;">Invalid Email/Password</label></span>
+                <button type="button" style="margin-left:65px;" onclick="signin()">Sign In</button>			    
+                <div class="separator">               
+                    <p>------------- OR -------------</p>              
+                </div>
+				<img src="images/login-facebook.png" style="width:202px;">
+            </fieldset>
+            </form>
+        </div>
+    </div>    
+    
+    </div><!--Wrapping the navigation bar END -->
+</div>    		 
+<div class="container">
+	<div class="row" style="padding:5px;">
+    	<h3 class="heading">Tour Destinations</h3>
+        <hr/>
+    </div>    
+
+    <div class="jumbotron">
+        <div class="row">
+        	<div class="col-md-8">
+                <h3 class="heading-content">Best of South America <span style="color:#F90; text-transform:lowercase;">(13 Days 12 Nights)</span> </h3>
+                <p style="font-family:Arial, Helvetica, sans-serif; color:#F90; font-size:22px;"><strong>Price: $4800</strong></p>
+            </div>
+            <div class="col-md-4">
+            	<img src="images/book-now.png">
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-5" style="text-align:center;">
+                <img src="images/christ.jpg" style="max-width:98%; max-height:90%" height="320" class="img-rounded"/>
+            </div>
+            <div class="col-md-7" style="padding-top:10px;">
+                <table width="520" class="table-responsive" >
+                <tr>
+                    <td width="116"><strong>Countries</strong></td>
+                    <td width="21">:</td>
+                    <td width="367">South America</td>
+                </tr>
+                <tr>
+                    <td><strong>State / Cities</strong></td>
+                    <td>:</td>
+                    <td>Rio De Janeiro, Brazil, Buenos Aires, and Santiago</td>
+                </tr>
+                <tr>
+                    <td><strong>Category</strong></td>
+                    <td>:</td>
+                    <td>Family Trip</td>
+                </tr>
+                <tr>
+                    <td><strong>Travel Dates</strong></td>
+                    <td>:</td>
+                    <td>Valid until 15 December 2014</td>
+                </tr>
+                <tr>
+                    <td><strong>Duration</strong></td>
+                    <td>:</td>
+                    <td>13 Days 12 Nights</td>
+                </tr>
+                <tr>
+                    <td><strong>Tour Code</strong></td>
+                    <td>:</td>
+                    <td>US1312</td>
+                </tr>                               
+                </table> 
+                <hr style="border-top: 1px solid #CCC;">
+                <h4>Highlights</h4>
+                <ul>
+                    <li>Explore the mystery, tradition and outdoor adventures</li>
+                    <li>Meet local people in rural villages and bargain for hand-made crafts</li>
+                    <li>Take a photo in front of the iconic Christ the Redeemer statue, one of the New Seven Wonders of the World</li>
+                    <li>Enjoy the view in Iguassu Falls, the world's largest and most impressive waterfalls</li>
+                </ul>
+                <hr style="border-top: 1px solid #CCC;">
+            </div>
+        </div>
+        
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#itinerary" role="tab" data-toggle="tab">ITINERARY</a></li>
+            <li><a href="#price" role="tab" data-toggle="tab">PRICE DETAILS</a></li>
+            <li><a href="#disclaimer" role="tab" data-toggle="tab">DISCLAIMER</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="itinerary">
+	            <h5><strong>Day 1 : ARRIVE RIO DE JANEIRO (4 NIGHTS)</strong></h5>
+                <p>Bemvindo ao Rio de Janeiro! You will arrive and be met at the airport by a local host and taken to your luxurious oceanfront hotel (check in time is 3 p.m.). Enjoy your hotel's superb location overlooking Copacabana Beach, minutes from downtown Rio Hotel: Windsor Atlantica Hotel</p>
+                
+	            <h5><strong>Day 2 : RIO DE JANEIRO SIGHTSEEING</strong></h5>
+                <p>Enjoy a leisurely morning before joining your Travel Director for an exploration of the cidade maravilhosa (marvellous city) and its many contrasts, from the 18th century aqueduct and colonial Candelaria Church to the 20th century opera house, Sambodromo, and city Cathedral. Ascend Sugarloaf Mountain via cable car for astounding views over the city and the bay. This evening, enjoy a festive Welcome Reception at the hotel with your Travel Director and fellow travellers.</p>
+            	
+                <h5><strong>Day 3 : RIO DE JANEIRO SIGHTSEEING & AT LEISURE </strong></h5>
+                <p>Board a classic cogwheel train for the journey to the summit of majestic Corcovado, site of the iconic Christ the Redeemer statue, one of the New Seven Wonders of the World. After admiring the panoramic views, head back down the mountain and see the song-inspiring Copacabana and Ipanema beaches and stop for a lunch at a local restaurant on your way back to your hotel. Spend the rest of the day at leisure.</p>
+	            
+                <h5><strong>Day 4 : RIO DE JANEIRO AT LEISURE</strong></h5>
+                <p>Enjoy a full day to explore the wonders of Rio on your own. Your Travel Director will be happy to help you plan your day. This evening, learn how to mix the perfect Caipirinha, a Local Speciality and Brazil's national cocktail, and then indulge in a traditional barbeque Highlight Dinner at a local churrascaria. Feel the spirit of Rio's world-famous Carnival as you're treated to a lively extravaganza of Samba song-and-dance.</p>
+	            
+                <h5><strong>Day 5 : RIO DE JANEIRO – IGUASSU FALLS (2 NIGHTS) </strong></h5>
+                <p>Brazil is world renowned for its vast array of gemstones. This morning, you'll learn about this Local Speciality and watch the fascinating creative process as precious metals and rough gemstones are transformed into works of art, design and luxury. Then take a flight to magnificent Iguassu Falls, straddling the border of Brazil, Argentina and Paraguay. A UNESCO World Heritage Site, Iguassu National Park boasts one of the world's largest and most impressive waterfalls and is home to many rare and endangered species of flora and fauna. This evening, enjoy a convivial dinner with your travel companions at the hotel.</p>
+	            
+                <h5><strong>Day 6 : IGUASSU FALLS SIGHTSEEING & AT LEISURE </strong></h5>
+				<p>Enter Iguassu National Park and spend the morning exploring the Brazilian side of the cascades with a Local Expert, including a scenic walk through the rainforest at the base of the falls. After enjoying a lunch at a local restaurant with a view of the falls, return to your hotel for an afternoon at leisure. Perhaps enjoy the hotel's thermal pools fed by the planet's biggest thermal water spring or visit the Parque das Aves - a tropical bird preserve that's home to more than 500 species of Brazilian birds.</p>
+                
+                <h5><strong>Day 7 : IGUASSU FALLS – BUENOS AIRES (3 NIGHTS)</strong></h5>
+                <p>Cross the border into Argentina and spend some time getting to know the geography of the area at the Visitors Centre. Take a walk along a scenic catwalk and board the open-air Ecological Jungle Train for a different perspective on the mighty falls and view the thunderous Devil's Throat Falls. Then fly to Buenos Aires and arrive at your stylish hotel. From your hotel's vantage point in the heart of Argentina's sizzling capital, you are in the centre of all the action: renowned international designer boutiques, fine dining venues, museums, cultural pursuits, modern theatres and the famous Teatro Colon.</p>
+                
+                <h5><strong>Day 8 : BUENOS AIRES SIGHTSEEING & AT LEISURE </strong></h5>
+                <p>Embark with a Local Expert on an in-depth tour of the passionate city where the tango was born. See the Casa Rosada, Metropolitan Cathedral and other government buildings; world-renowned Teatro Colon; the colourful neighbourhood of La Boca; San Telmo and lovely Palermo, home to fashionable cafes and verdant parks.  See the Teatro Colon, a landmark in Buenos Aires and a Unique Insight. Take a backstage tour of the Opera House, including the main function rooms, the main stage and, of course, the workshops where all the customs and clothes used in the performances are produced. Lastly, visit the elegant Recoleta, where Argentina's former first lady, Eva Peron (Evita), is buried. Enjoy some time at leisure before joining your Travel Director and fellow travellers for an exclusive Be My Guest experience in Palermo Soho this evening. You will be welcomed by a local family and long-time residents of this now-trendy neighbourhood in the fashionable Palermo Viejo. Be delighted, as they wine and dine you with homemade family recipes. Discover the secrets of kneading country bread and even try with your own hands. Watch as your hosts demonstrate the art of typical Argentinean crafts. Spending time with these lively people will be an insider memory you won't soon forget.</p>
+                
+                <h5><strong>Day 9 : BUENOS AIRES AT LEISURE </strong></h5>
+                <p>Relish a morning and afternoon at leisure to pursue your own interests in the "Paris of South America." The possibilities are endless. Delve into one of the country's finest museums at the Museo Nacional de Bellas Artes, set in a lovely park in the Recoleta neighbourhood. Follow in the footsteps of Argentina's most revered writer, Jorge Luis Borges, as you browse the many bookstores of Buenos Aires and sip a coffee at the famed Cafe Tortoni. As an option, you can visit the UNESCO World Heritage city of Colonia del Sacramento across the Rio de la Plata in Uruguay. And if you'd like to experience a different side of Argentina, choose an optional trip into the countryside to a traditional estancia (ranch); share a drink with the local gauchos (cowboys), learn about their lives and marvel at their consummate horsemanship during a lively equestrian show before tucking into a sumptuous traditional parrillada (barbeque) lunch. This evening, do as the locals do and linger over a Highlight Dinner and a chance for an authentic taste of world-renowned Argentinean beef! Cap off the evening watching the best tango dancers in Buenos Aires perform, and experience the passion and power of the traditional tango - the most representative and beloved music in Argentina.</p>
+                
+                <h5><strong>Day 10 : BUENOS AIRES – SANTIAGO (3 NIGHTS) </strong></h5>
+                <p>Bid "Adios" to Buenos Aires and say "Hola" to Santiago as you fly west across the Andes to the Chilean capital. Settle into your hotel, situated in the heart of one of Santiago's most beautiful neighbourhoods, and a prime location close to charming boutiques, bars and restaurants. This evening is at leisure.</p>
+                
+                <h5><strong>Day 11 : SANTIAGO SIGHTSEEING </strong></h5>
+                <p>Head for the Maipo Valley, Chile's most traditional wine-producing valley known for its premium wines. Visit an exclusive winery where you will enjoy a gourmet Highlight Lunch served alfresco on the beautiful grounds. After, meet the winemaker, your Local Expert, for a personalised winery experience, from the vineyards to the bottling process. Celebrate Chile's proud wine-making traditions with a wine tasting. Back in Santiago, meet your Local Expert and embark on an orientation tour of this vibrant city, travelling past Club Hipico - the regal racetrack - and sprawling Parque O'Higgins. Cruise along Alameda Avenue past the Church of San Francisco and the University of Chile on your way to the vibrant Plaza de Armas with its fountains and sculptures. View the Palacio de la Moneda, a UNESCO World Heritage Site and the Central Market. Drive up San Cristobal Hill for panoramic views of the city and the snow-capped Andes. Return to your hotel, which is situated in one of Santiago's most beautiful neighbourhoods, near boutiques, bars and restaurants.</p>
+                
+                <h5><strong>Day 12 : SANTIAGO AT LEISURE </strong></h5>
+                <p>Enjoy a day of leisure in Santiago. Perhaps join an optional trip to Valparaiso, once known as "Little San Francisco" by the sailors who made it a frequent stopover on the long voyage between the Pacific and Atlantic oceans; then take the coastal road to see the graceful mansions, white-sand beaches and historic casino of the seaside resort of Vina del Mar. This evening, gather with your travel companions for a festive Farewell Dinner.</p>
+                
+                <h5><strong>Day 13 : DEPART SANTIAGO </strong></h5>
+                <p>Say hasta luego to Chile and transfer to the airport for your onward travel arrangements. For your comfort, your rooms are reserved until 6 p.m. You can chose to extend your stay in Santiago at the InterContinental Santiago if you wish.</p>
+                
+                <div class="row">
+                    <div class="col-md-12" style="text-align:center;">
+                        <a href="itinerary/best_south_america.pdf" target="_blank"><img src="images/pdf-download.jpg" title="Download this itinerary as PDF File"></a>
+                    </div>
+                    <div class="col-md-1""></div>          
+                </div>
+
+            </div>
+            <div class="tab-pane" id="price">Price Details</div>
+            <div class="tab-pane" id="disclaimer">Disclaimer</div>
+        </div>
+        <!-- End Tabs -->
+    </div>
+
+</div>
+    <!-- Footer section -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h6>Copyright &copy; 2014 Frac-Tour</h6>
+                </div>
+                <div class="col-sm-4">
+                    <h6>About The Website</h6>
+                    <p>This website is created with the purpose of completing Software Engineering project provided by James Cook University</p>
+                
+                </div>
+                <div class="col-sm-2">
+                    <h6>Navigation</h6>
+                    <ul class="unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html">Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h6>Follow Us</h6>
+                        <a href="https://www.facebook.com/fractour2014" target="_blank"><img src="images/facebook_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="https://twitter.com/fractour" target="_blank"><img src="images/twitter_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="http://instagram.com/fractour" target="_blank"><img src="images/instagram_icon.png" style="width:30px; height:27px;"/></a>
+                </div>
+                
+                <div class="col-sm-2">
+                    <h6>Coded by &copy; IDETIVE</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+</body>
+
+</html>

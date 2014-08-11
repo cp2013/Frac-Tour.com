@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FracTour | Australia Delight</title>
+<link href="images/FracTour_Logo.png" rel="shortcut icon" />
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/signin_signout.js"></script>		
+<style>
+.container .row .heading{
+	text-transform:uppercase;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#999;	
+}
+
+.container .row .heading-content{
+	text-transform:uppercase;
+	font-family:Verdana, Geneva, sans-serif;
+}
+
+.container .jumbotron p{
+	font-size:15px;
+	text-align:justify;
+}
+.container .jumbotron .row .col-md-7{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;	
+}
+.nav-tabs > li > a{
+	color:black;
+	font-family:Verdana, Geneva, sans-serif;	
+}
+.tab-content {
+	background-color:white;
+	padding:10px;
+	padding-left:15px;
+	border:1px solid #ddd;
+
+}
+.tab-content #itinerary > h5{
+	margin-bottom:0;
+}
+.tab-content #itinerary > p{
+	font-size:13px;		
+	margin-top:5px;
+	padding:0;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+	.tour {
+		width: 100%;
+	}
+
+	.tour-label {
+		width:auto;	
+		left:15px;
+		right:15px;
+	}
+}
+</style>
+</head>
+<body>
+<div class="container"  style="width:100%; margin:0; padding:0;"><!--Wrapping the whole elements in order to be responsive-->
+    <div class="mainContent" style="position:relative; width:100%;">	<!-- Wrapping the navigation bar START -->
+    
+        <div class="navbar navbar-inverse navbar-static-top"><!-- Navigation Bar START -->
+        
+            <div class="container"><!-- Container START -->
+                
+                <a href="index.html"><img src="images/FracTour_Logo.png" width="50" height="40" class="lfloat"/></a>
+                
+                
+                <!-- Displaying 3 icon bars for small screen dimensions -->
+                <button class= "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Navbar for small screen dimensions -->
+                <div class="collapse navbar-collapse navHeaderCollapse"><!-- collapse navbar START -->
+                    
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html" >Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    
+                        <li id="statusbox"><a href="#" class="signin">Login</a></li>
+                        <li><a href="user_registration.html" target="_blank">Register</a></li>
+                        <li><a href="admin_login.html" target="_blank">Admin</a></li> 
+                    
+                    </ul>
+                
+                </div><!-- Collapse navbar END -->
+                
+            </div><!-- Container END -->
+        
+        </div><!-- Navigation Bar END -->
+        
+    <div class="mask">
+        <div class="loginpopup">
+            <a href="#" class="close"><img src="images/closeBtn.png" class="closeBtn" title="Close Window" alt="Close" /></a>
+            <form name="userloginform" method="post" action="" class="signinform">
+            <fieldset class="textbox">
+                <label class="email">
+                    <span>Email : </span>
+                    <input type="text" id="email" name="email">
+                </label>
+                <label class="password">
+                    <span>Password : </span>
+                    <input type="password" id="password" name="password">
+                </label>
+                <span><label class="warningtxt" style="color:#F00; display:none;">Invalid Email/Password</label></span>
+                <button type="button" style="margin-left:65px;" onclick="signin()">Sign In</button>			    
+                <div class="separator">               
+                    <p>------------- OR -------------</p>              
+                </div>
+				<img src="images/login-facebook.png" style="width:202px;">
+            </fieldset>
+            </form>
+        </div>
+    </div>    
+    
+    </div><!--Wrapping the navigation bar END -->
+</div>    		 
+<div class="container">
+	<div class="row" style="padding:5px;">
+    	<h3 class="heading">Tour Destinations</h3>
+        <hr/>
+    </div>    
+
+    <div class="jumbotron">
+        <div class="row">
+        	<div class="col-md-8">
+                <h3 class="heading-content">Australia Delight <span style="color:#F90; text-transform:lowercase;">(7 Days 6 Nights)</span> </h3>
+                <p style="font-family:Arial, Helvetica, sans-serif; color:#F90; font-size:22px;"><strong>Price: $1100</strong></p>
+            </div>
+            <div class="col-md-4">
+            	<img src="images/book-now.png">
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-5" style="text-align:center;">
+                <img src="images/opera-house.jpg" style="max-width:98%; max-height:90%" height="320" class="img-rounded"/>
+            </div>
+            <div class="col-md-7" style="padding-top:10px;">
+                <table width="520" class="table-responsive" >
+                <tr>
+                    <td width="116"><strong>Countries</strong></td>
+                    <td width="21">:</td>
+                    <td width="367">Australia</td>
+                </tr>
+                <tr>
+                    <td><strong>State / Cities</strong></td>
+                    <td>:</td>
+                    <td>Sydney and Melbourne</td>
+                </tr>
+                <tr>
+                    <td><strong>Category</strong></td>
+                    <td>:</td>
+                    <td>Family Trip</td>
+                </tr>
+                <tr>
+                    <td><strong>Travel Dates</strong></td>
+                    <td>:</td>
+                    <td>Valid until 20 September 2014</td>
+                </tr>
+                <tr>
+                    <td><strong>Duration</strong></td>
+                    <td>:</td>
+                    <td>7 Days 6 Nights</td>
+                </tr>
+                <tr>
+                    <td><strong>Tour Code</strong></td>
+                    <td>:</td>
+                    <td>AU76</td>
+                </tr>                               
+                </table> 
+                <hr style="border-top: 1px solid #CCC;">
+                <h4>Highlights</h4>
+                <ul>
+                    <li>Visit the most wonderful spot to view the iconic Sydney Opere House and Harbour Bridge</li>
+                    <li>Meet local animals, such as Kangaroos, Koalas, Penguin</li>
+                    <li>Enjoy the wildlife in Blue Mountain</li>
+                    <li>Shop on Harbour Town or Queen Victoria Market</li>
+                </ul>
+                <hr style="border-top: 1px solid #CCC;">
+            </div>
+        </div>
+        
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#itinerary" role="tab" data-toggle="tab">ITINERARY</a></li>
+            <li><a href="#price" role="tab" data-toggle="tab">PRICE DETAILS</a></li>
+            <li><a href="#disclaimer" role="tab" data-toggle="tab">DISCLAIMER</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="itinerary">
+	            <h5><strong>Day 1 : Arrive Melbourne Airport</strong></h5>
+                <p>Arrival at Melbourne airport, make your way to the transfer counter for your S-I-C transfer to your hotel. You can consider do some shopping at Harbour Town or Queen Victoria Market. Free City Circle Tram is available every day for your own transport around the city</p>
+	            
+                <h5><strong>Day 2 : Melbourne City Tour – Magnificent Melbourne (No Hotel Drop offs) (B)</strong></h5>
+                <p>After breakfast, make your way to your meeting place for an exciting morning tour. This morning tour is packed with city sights and historical landmarks. You will tour through the city centre and see the iconic Melbourne Cricket Ground. Next you can take a look at the imposing Parliament House which is the largest 19th century building in Australia. After that, travel to Queen Victoria Market, the Fitzroy Gardens and see Captain Cook's Cottage. Lastly, stop by at the shrine of Remembrance.</p>
+                <p>Note: Tour: K1 DEP: 08.10AM & RET: 11.45AM</p>
+            	
+                <h5><strong>Day 3 : Melbourne/Philip Island Penguins/ Kangaroos & Koalas  (B)</strong></h5>
+                <p>After breakfast, morning is free. In the afternoon make your way to join your SIC Tour. Enjoy your tour to Phillip Island, home to an astounding array of wildlife, including Australia's largest fur seal colony, the Little Penguins and cuddly koalas. First stop is Maru Koala & Animal Park for up close and personal encounters with koalas, kangaroos, Tasmanian Devils and much more! Enjoy getting close to koalas and kangaroos before heading to Philip Island. Join the Little Penguins at dusk as they emerge from the surf and waddle to their burrows. View spectacular coastal scenery at the Nobbies, two rocky outcrops abundant in marine life. From the walkways you may be able to catch a glimpse of Australia's largest population of fur seals living along the rugged coastline. NOTE: Nobbies viewing is seasonal and dependant on daylight hours.</p>
+                <p>Note: Tour: K10 DEP: 1.15PM & RET: 9.30PM * Times vary seasonally. Please bring warm, waterproof clothing </p>
+	            
+                <h5><strong>Day 4 : Melbourne - Sydney Airport (B)</strong></h5>
+                <p>Today, free day till transfer to the domestic airport for flight to Sydney. Arrival at Sydney Airport, make your way to the transfer counter for your S-I-C transfer to your hotel.</p>
+	            
+                <h5><strong>Day 5 : Sydney City tour Choose 1 – (A) Magical Manly and Beyond (No Hotel Drop offs) (B)</strong></h5>
+                <p>After breakfast, make your way to your meeting place for an exciting morning tour. This morning, you will see some of the most beautiful sights this harbour city has to offer. You will head out over the Sydney Harbour Bridge. Travel to Milsons Point on the lower North Shore. From Milsons Point, you will get a great view of the iconic Sydney Opera House. Next, head for Arabanoo Lookout that offers views out to North and South Head and over the Pacific Ocean. Lastly, visit the famous Manly Beach.</p>
+                <p>Note: Tour: J13 DEP: 08.15AM & RET: 11.45AM</p>
+                <p>(B) Bondi Beach and Sydney Sights</p>
+                <p>After breakfast, make your way to your meeting place for an exciting morning tour. This morning, you will see some of the most beautiful sights this harbour city has to offer. Visit the Rocks which is a lively and popular spot. You will get a great view of the Sydney Harbour Bridge. Travel to Chinatown and then to Mrs Macquarie's Chair. You will get a view of the iconic Sydney Opera House. Later travel to the Gap, a dramatic ocean cliff on the east coast of Sydney. Lastly, visit the famous Bondi Beach.</p>
+	            
+                <h5><strong>Day 6 : Blue Mountains and Australian Wildlife (B)</strong></h5>
+				<p>Pass by Homebush Bay, site of the 2000 Olympic Games. Climb into the mountains via the sleepy townships of Blaxland, Leura, Wentworth and Lawson. Discover Leura village – a delightful blend of groomed gardens and quaint shops. Enjoy free time to wander the streets of Leura. Stop at Echo Point and see the famous Three Sisters rock formation. Enjoy an easy walk and stroll along the boardwalk through the Rainforest. Grab a bite for lunch* or sit and enjoy the 360° views at Scenic World – the only.view of the Three Sisters from your table! Ride the steepest incline Railway* in the world down to the lush and hidden valley. Enjoy amazing views over the Jamison Valley Take a ride on the recently unveiled Skyway*, a journey 370 metres above ancient ravines and dazzling waterfalls. Enjoy stunning views from Narrowneck and Cahill Lookouts. Enjoy an afternoon encounter at Featherdale Wildlife Park. Have your photo taken with a cuddly koala and get up close to our native wildlife. See kangaroos, wombats, dingoes and cute Little Penguins. *These experiences are optional at your discretion and cost.</p>
+                <p>Cross the Sydney Harbour Bridge and tour through the leafy and affluent northern suburbs. Travel over the Hawkesbury River, a holiday hub for boat lovers. Discover Australian wildlife at a zoo with a big bite – the Australian Reptile Park, just loaded with unique exhibits and animals. See platypus, Tasmanian devils, wombats, friendly kangaroos, cuddly koalas and giant crocodiles. Board a luxury cruiser and search for the pods of bottlenose dolphins – watch as they play on the bow waves or why not try the boom net ride! Be entertained with informative commentary and spectacular scenery of the bay and Tomaree and Yacaaba headlands. Experience the grandeur and tranquillity of the local desert wilderness, and environmental and historical sights. Travel in modern comfortable 4WD vehicles and encounter the Stockton Bight. The Stockton Bight sand dunes covering an area of over 2,500 hectares along 32 kilometres need to be seen to be believed! Why not try sand boarding, an experience you won't forget!</p>
+                
+                <h5><strong>Day 7 : Sydney - Singapore (B)</strong></h5>
+                <p>Transfer to your preferred International airport for your flight back to Singapore. Hope you have a wonderful and memorable trip in Melbourne and Sydney!</p>
+                
+                <div class="row">
+                    <div class="col-md-12" style="text-align:center;">
+                        <a href="itinerary/australia_delight.pdf" target="_blank"><img src="images/pdf-download.jpg" title="Download this itinerary as PDF File"></a>
+                    </div>
+                    <div class="col-md-1""></div>          
+                </div>
+
+            </div>
+            <div class="tab-pane" id="price">Price Details</div>
+            <div class="tab-pane" id="disclaimer">Disclaimer</div>
+        </div>
+        <!-- End Tabs -->
+    </div>
+
+</div>
+    <!-- Footer section -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h6>Copyright &copy; 2014 Frac-Tour</h6>
+                </div>
+                <div class="col-sm-4">
+                    <h6>About The Website</h6>
+                    <p>This website is created with the purpose of completing Software Engineering project provided by James Cook University</p>
+                
+                </div>
+                <div class="col-sm-2">
+                    <h6>Navigation</h6>
+                    <ul class="unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html">Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h6>Follow Us</h6>
+                        <a href="https://www.facebook.com/fractour2014" target="_blank"><img src="images/facebook_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="https://twitter.com/fractour" target="_blank"><img src="images/twitter_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="http://instagram.com/fractour" target="_blank"><img src="images/instagram_icon.png" style="width:30px; height:27px;"/></a>
+                </div>
+                
+                <div class="col-sm-2">
+                    <h6>Coded by &copy; IDETIVE</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+</body>
+
+</html>

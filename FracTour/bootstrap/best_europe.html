@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FracTour | Best of Europe</title>
+<link href="images/FracTour_Logo.png" rel="shortcut icon" />
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/signin_signout.js"></script>		
+<style>
+.container .row .heading{
+	text-transform:uppercase;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#999;	
+}
+
+.container .row .heading-content{
+	text-transform:uppercase;
+	font-family:Verdana, Geneva, sans-serif;
+}
+
+.container .jumbotron p{
+	font-size:15px;
+	text-align:justify;
+}
+.container .jumbotron .row .col-md-7{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;	
+}
+.nav-tabs > li > a{
+	color:black;
+	font-family:Verdana, Geneva, sans-serif;	
+}
+.tab-content {
+	background-color:white;
+	padding:10px;
+	padding-left:15px;
+	border:1px solid #ddd;
+
+}
+.tab-content #itinerary > h5{
+	margin-bottom:0;
+}
+.tab-content #itinerary > p{
+	font-size:13px;		
+	margin-top:5px;
+	padding:0;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+	.tour {
+		width: 100%;
+	}
+
+	.tour-label {
+		width:auto;	
+		left:15px;
+		right:15px;
+	}
+}
+</style>
+</head>
+<body>
+<div class="container"  style="width:100%; margin:0; padding:0;"><!--Wrapping the whole elements in order to be responsive-->
+    <div class="mainContent" style="position:relative; width:100%;">	<!-- Wrapping the navigation bar START -->
+    
+        <div class="navbar navbar-inverse navbar-static-top"><!-- Navigation Bar START -->
+        
+            <div class="container"><!-- Container START -->
+                
+                <a href="index.html"><img src="images/FracTour_Logo.png" width="50" height="40" class="lfloat"/></a>
+                
+                
+                <!-- Displaying 3 icon bars for small screen dimensions -->
+                <button class= "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Navbar for small screen dimensions -->
+                <div class="collapse navbar-collapse navHeaderCollapse"><!-- collapse navbar START -->
+                    
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html" >Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    
+                        <li id="statusbox"><a href="#" class="signin">Login</a></li>
+                        <li><a href="user_registration.html" target="_blank">Register</a></li>
+                        <li><a href="admin_login.html" target="_blank">Admin</a></li> 
+                    
+                    </ul>
+                
+                </div><!-- Collapse navbar END -->
+                
+            </div><!-- Container END -->
+        
+        </div><!-- Navigation Bar END -->
+        
+    <div class="mask">
+        <div class="loginpopup">
+            <a href="#" class="close"><img src="images/closeBtn.png" class="closeBtn" title="Close Window" alt="Close" /></a>
+            <form name="userloginform" method="post" action="" class="signinform">
+            <fieldset class="textbox">
+                <label class="email">
+                    <span>Email : </span>
+                    <input type="text" id="email" name="email">
+                </label>
+                <label class="password">
+                    <span>Password : </span>
+                    <input type="password" id="password" name="password">
+                </label>
+                <span><label class="warningtxt" style="color:#F00; display:none;">Invalid Email/Password</label></span>
+                <button type="button" style="margin-left:65px;" onclick="signin()">Sign In</button>			    
+                <div class="separator">               
+                    <p>------------- OR -------------</p>              
+                </div>
+				<img src="images/login-facebook.png" style="width:202px;">
+            </fieldset>
+            </form>
+        </div>
+    </div>    
+    
+    </div><!--Wrapping the navigation bar END -->
+</div>    		 
+<div class="container">
+	<div class="row" style="padding:5px;">
+    	<h3 class="heading">Tour Destinations</h3>
+        <hr/>
+    </div>    
+
+    <div class="jumbotron">
+        <div class="row">
+        	<div class="col-md-8">
+                <h3 class="heading-content">Best of Europe <span style="color:#F90; text-transform:lowercase;">(21 Days 20 Nights)</span> </h3>
+                <p style="font-family:Arial, Helvetica, sans-serif; color:#F90; font-size:22px;"><strong>Price: $5000</strong></p>
+            </div>
+            <div class="col-md-4">
+            	<img src="images/book-now.png">
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-5" style="text-align:center;">
+                <img src="images/paris.jpg" style="max-width:98%; max-height:90%" height="320" class="img-rounded"/>
+            </div>
+            <div class="col-md-7" style="padding-top:10px;">
+                <table width="520" class="table-responsive" >
+                <tr>
+                    <td width="116"><strong>Countries</strong></td>
+                    <td width="21">:</td>
+                    <td width="367">Europe</td>
+                </tr>
+                <tr>
+                    <td><strong>State / Cities</strong></td>
+                    <td>:</td>
+                    <td>Amsterdam, Paris, Rome, Austria, Germany, and Swiss</td>
+                </tr>
+                <tr>
+                    <td><strong>Category</strong></td>
+                    <td>:</td>
+                    <td>Family Trip</td>
+                </tr>
+                <tr>
+                    <td><strong>Travel Dates</strong></td>
+                    <td>:</td>
+                    <td>Valid until 12 January 2015</td>
+                </tr>
+                <tr>
+                    <td><strong>Duration</strong></td>
+                    <td>:</td>
+                    <td>21 Days 20 Nights</td>
+                </tr>
+                <tr>
+                    <td><strong>Tour Code</strong></td>
+                    <td>:</td>
+                    <td>EU2120</td>
+                </tr>                               
+                </table> 
+                <hr style="border-top: 1px solid #CCC;">
+                <h4>Highlights</h4>
+                <ul>
+                    <li>Relax on Rhine River Cruise</li>
+                    <li>Ride gondola lift to see the wonderful of Alps Mountain</li>
+                    <li>Taste the Italian food in the beauty of Venice</li>
+                    <li>Explore the history through the monumental Colosseum</li>
+                    <li>Explore the beauty of Paris</li>
+                </ul>
+                <hr style="border-top: 1px solid #CCC;">
+            </div>
+        </div>
+        
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#itinerary" role="tab" data-toggle="tab">ITINERARY</a></li>
+            <li><a href="#price" role="tab" data-toggle="tab">PRICE DETAILS</a></li>
+            <li><a href="#disclaimer" role="tab" data-toggle="tab">DISCLAIMER</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="itinerary">
+	            <h5><strong>Day 1 : Welcome to the Netherlands</strong></h5>
+                <p>We'll start in quintessentially Dutch Haarlem, a quick 30 minutes by train, bus, or taxi from the Amsterdam airport. We'll meet at our hotel around 4 p.m. for an orientation and chance to get acquainted, followed by a walking tour of this charming town and a traditional rijsttafel dinner together. Sleep in Haarlem (2 nights). No bus. Walking: light.</p>
+                
+	            <h5><strong>Day 2 : Progressive, Artistic Amsterdam</strong></h5>
+                <p>We'll take the train into Amsterdam this morning, and then hop aboard a tram for an introduction to this progressive, artistic city. Our first stop will be a visit to the Anne Frank House, followed by a walking tour of Amsterdam's historic streets, lined with teetering, gable-topped houses overlooking centuries-old canals. This afternoon we'll tour the remarkable Rijksmuseum, featuring masterpieces by Rembrandt and Vermeer. Afterward, you'll have free time to see another artist's rich legacy at the nearby Van Gogh Museum. We'll finish up in Amsterdam with a relaxing canal boat cruise and eye-opening Red Light District walk, before returning to Haarlem for dinner on your own. Train: 1 hr. Boat: 1 hr. No bus. Walking: strenuous.</p>
+            	
+                <h5><strong>Day 3 : Dutch Treats and Rhine Views </strong></h5>
+                <p>We'll travel to Arnhem's open-air museum this morning to see what life was like in this corner of Europe centuries ago. We'll wander among the quaint houses, village storefronts, and working windmills, followed by a traditional Dutch pancake lunch. Then we'll work our way down to Germany's castle-studded Rhineland, enjoying dinner together at our 700-year-old hotel, nestled in the medieval village of Bacharach on the Rhine (2 nights). Bus: 6 hrs. Walking: light.</p>
+	            
+                <h5><strong>Day 4 : Rhine Castles and a River Cruise</strong></h5>
+                <p>This morning we'll take a walking tour of the village of Bacharach with an entertaining local guide. At nearby St. Goar we'll hike up the hill to tour the mighty medieval Rheinfels castle, and enjoy its commanding view of the Rhine Valley. We'll then board a boat for a relaxing Rhine river cruise, passing picturesque villages and feudal castles, followed by free time for dinner on your own. Boat: 1 hr. Bus: ½ hr. Walking: strenuous.</p>
+	            
+                <h5><strong>Day 5 : Medieval Rothenburg</strong></h5>
+                <p>We'll get an early start today, arriving in Rothenburg, Germany's best preserved medieval town, just before lunchtime. After a helpful orientation tour, the afternoon is yours to see the best woodcarving in Germany (Riemenschneider's altarpiece), walk the medieval wall, tour the Crime and Punishment Museum, or hunt down the best apple strudel in town. This evening we'll tag along on the legendary Night Watchman's tour. Sleep in or near Rothenburg (1 night). Bus: 4 hrs. Walking: light to strenuous (your choice).</p>
+	            
+                <h5><strong>Day 6 : Dachau and Austria's Tirol </strong></h5>
+				<p>Today we'll make a 21st-century pilgrimage to the Dachau Concentration Camp near Munich, where we'll learn powerful lessons about the Holocaust and WWII. We'll then drive across the Bavarian countryside to visit Germany's greatest Rococo-style church, the Wieskirche. Winding our way toward Austria, we'll arrive at our rural Tirolean guest house in time for a traditional dinner. Sleep near Reutte (2 nights). Bus: 6 hrs. Walking: moderate.</p>
+                
+                <h5><strong>Day 7 : Royal Castles and a Luge</strong></h5>
+                <p>It's a short drive to Hohenschwangau Castle, the boyhood home of "Mad" King Ludwig. After touring the castle and learning about his childhood, you'll have time to grab some lunch before making the half-hour walk uphill to visit Ludwig's idea of a home fit for a king, the deservedly famous Neuschwanstein Castle. Afterward (weather permitting) you'll barrel down the Tegelberg luge, and still have free time to stroll in the woods or relax at our peaceful hotel before dinner together. Bus: 1 hr. Walking: strenuous.</p>
+                
+                <h5><strong>Day 8 : Italy's Incomparable Venice </strong></h5>
+                <p>We'll take a scenic, all-day drive to Venice today, stopping en route for lunch together in a characteristic Italian-Tirolean village. In Venice we'll park our bus and board a vaporetto boat for a Grand Canal ride to our hotel in the historic heart of this seductive city. Tonight we'll take an alleys-and-canals orientation stroll to our first Italian dinner together. Afterward your guide will organize an optional gondola ride for this unique Venetian experience. If the moon is out, it will hit your eye like a big pizza pie. Sleep in Venice (2 nights). Boat: ½ hr. Bus: 7 hrs. Walking: light.</p>
+                
+                <h5><strong>Day 9 : The Art of Wandering in Venice </strong></h5>
+                <p>This morning our local guide will take us on a winding walking tour through Venice, blending historic and modern-day stories of this one-of-a-kind treasure, and giving us a local's perspective on Venice's fascinating past...and its uncertain future. The rest of your day is free to visit St. Mark's Basilica, the Doge's Palace, or the Titian- and Tintoretto-packed Accademia art gallery. Better yet, get lost (remember, it's an island) exploring the alleys, cruising the canals, and "crawling" the pubs. No bus (too much water). Walking: moderate.</p>
+                
+                <h5><strong>Day 10 : Florence and Michelangelo's David </strong></h5>
+                <p>An early-morning vaporetto ride will reunite us with our bus and driver. We'll drive straight to Florence, and hit the ground walking with a Renaissance tour of the city's historic center. We'll see and learn about Brunelleschi's magnificent cathedral dome, Ghiberti's Baptistery doors, and other creations that helped define this world-changing era. We'll end our walk at the Accademia Gallery to marvel at works of sculptural genius: Michelangelo's rough-hewn Prisoners and his greatest masterpiece, David. We'll have dinner together tonight, and sleep in Florence (2 nights). Boat: ½ hr. Bus: 4 hrs. Walking: moderate.</p>
+                
+                <h5><strong>Day 11 : Wonders of Renaissance Florence </strong></h5>
+                <p>This morning is on your own. You can sleep in — or get an early start and scramble to the top of Brunelleschi's dome, or browse through Florence's colorful food and craft markets. After lunch, we'll tour the wealth of Botticellis, Leonardos, and Raphaels in the greatest collection of Italian paintings anywhere — the Uffizi Gallery. This evening is free to make your own discoveries. No bus. Walking: moderate.</p>
+                
+                <h5><strong>Day 12 : A Walk Through Caesar's Rome</strong></h5>
+                <p>This morning we'll drive straight to the heart of Rome. After a quick lunch and a Roman transportation lesson, we'll spend the rest of the afternoon uncovering Ancient Rome as a local guide takes us through the monumental Colosseum, history-drenched Roman Forum, and the awe-inspiring Pantheon. Tonight you may wish to celebrate la dolce vita Roman-style, with an after-dinner stroll through the floodlit heart of the city, lacing together the lively campos, classy piazzas, and the splashy Trevi Fountain. Sleep in Rome (2 nights). Bus: 4 hrs. Walking: strenuous.</p>
+                
+                <h5><strong>Day 13 : St. Peter's and the Vatican Museum </strong></h5>
+                <p>Today we'll focus on Renaissance (Catholic) Rome. At the sprawling Vatican Museum we'll tour its vast collection of treasures as we make our way to one of the world's most famous works of art: Michelangelo's Sistine Chapel. Our tour will continue inside the greatest church in Christendom, the awe-inspiring St. Peter's Basilica, home to Michelangelo's sublime Pietà. You'll have the rest of your day and evening free to wander through this immense church, climb the dome if you're feeling energetic, and explore more of the Eternal City on your own (don't forget to taste some delicious gelato along the way). No bus. Walking: strenuous.</p>
+                
+                <h5><strong>Day 14 : To Italy's Cinque Terre </strong></h5>
+                <p>We'll drive along Italy's western coast today, with a refreshing stop at one of Italy's enchanting hill towns. This afternoon's destination is Italy's dramatic Cinque Terre: five perfectly preserved fishing villages, laced together with hiking paths that meander between vineyards and the deep blue sea. As we approach the Cinque Terre, we'll park our bus and take a short train ride into seaside Monterosso al Mare, where we'll sleep (2 nights). Train: ¼ hr. Bus: 6 hrs. Walking: moderate.</p>
+                
+                <h5><strong>Day 15 : Free Day in the Cinque Terre</strong></h5>
+                <p>Ahh, it's time to take a "vacation from your vacation" today in our Mediterranean getaway. Pick a Cinque Terre village and spend your day exploring the stairways and alleyways, sunning yourself on the rocks, or sipping a cappuccino and catching up on your journal at an outdoor café. Or, if you're looking for lots of exercise, fresh air, and panoramic views, start your day early and hike the cliffside paths that connect the towns. No bus. Walking: light to strenuous (your choice).</p>
+                
+                <h5><strong>Day 16 : To the Heart of the Swiss Alps </strong></h5>
+                <p>Today we'll catch an early train back to our bus and head over the hills, past the farms and along the pristine lakes of northern Italy, and into the Alpine wonderland of Switzerland. After a breathtaking drive into the very heart of the Swiss Alps, we'll arrive at our creaky chalet in the magnificent Lauterbrunnen Valley, where we'll have dinner and sleep (2 nights). Train: ¼ hr. Bus: 7 hrs. Walking: light.</p>
+                
+                <h5><strong>Day 17 : Free Day in the Alps </strong></h5>
+                <p>The day is all yours to enjoy some of Europe's most dramatic scenery. You may want to join your guide for an optional mountain excursion that combines the local narrow-gauge railway, a gondola lift, and a spectacular Alpine walk above the tree line, surrounded by a panorama of cut-glass peaks...or ride a gondola lift up to the Schilthorn at 10,000 feet, loiter in the thin air, and hike down...or wander through the valley and walk to the thundering Trümmelbach: a unique set of waterfalls encased behind the valley walls. We'll have dinner together tonight. No bus. Walking: light to strenuous (your choice).</p>
+                
+                <h5><strong>Day 18 : A Hearty Taste of Burgundy </strong></h5>
+                <p>Today we'll say Auf Wiedersehen to the Alps and Bonjour to la belle France. We'll drive into profoundly French Burgundy for a look at small-town France. We'll have an orientation walk through the heart of Burgundy's inviting wine capital, Beaune, visit the famous Hôtel Dieu medieval hospital, then enjoy a wine tasting together. Sleep in Beaune (1 night). Bus: 5 hrs. Walking: light.</p>
+                
+                <h5><strong>Day 19 : Historic and Neighborhood Paris </strong></h5>
+                <p>SThis morning we'll drive straight to Paris, where you'll have an orientation of the neighborhood markets and cafés to find lunch on your own. After checking into our nearby hotel, we'll have a transportation lesson and Métro ride to the historic heart of Paris: the Ile de la Cité. Prepare to be awed by the brilliant stained glass windows of Sainte-Chapelle, and enlightened on a historic walk through the Latin Quarter, ending at the stunning Notre-Dame Cathedral. Your evening is free for dinner and more discoveries. Sleep in Paris (2 nights). Bus: 4 hrs. Walking: moderate.</p>
+                
+                <h5><strong>Day 20 : Parisian Masterpieces </strong></h5>
+                <p>This day provides a busy, star-studded finale for our tour. Our morning is devoted to touring Europe's greatest museum — the Louvre — where you'll come face-to-face with timeless treasures that include Mona Lisa, Winged Victory, Venus de Milo, and hundreds more. You'll be free for the rest of the afternoon to round out your Paris sightseeing with a walk down the Champs-Elysées, or perhaps a visit to such legendary museums as the Orsay and Rodin. This evening we'll have our final dinner together, sharing memories and toasting our newly made friends. Salut! No bus. Walking: moderate.</p>
+                
+                <h5><strong>Day 21 : Tour Over After Breakfast</strong></h5>
+                <p>If you're staying on in Paris, today would be a great day to hop on the train and tackle the sprawling palace and grounds at Versailles. If you're headed home, it's a breeze to reach Paris' airports by taxi, shuttle, or public transportation. Au revoir!</p>
+                
+                <div class="row">
+                    <div class="col-md-12" style="text-align:center;">
+                        <a href="itinerary/best_europe.pdf" target="_blank"><img src="images/pdf-download.jpg" title="Download this itinerary as PDF File"></a>
+                    </div>
+                    <div class="col-md-1""></div>          
+                </div>
+
+            </div>
+            <div class="tab-pane" id="price">Price Details</div>
+            <div class="tab-pane" id="disclaimer">Disclaimer</div>
+        </div>
+        <!-- End Tabs -->
+    </div>
+
+</div>
+    <!-- Footer section -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h6>Copyright &copy; 2014 Frac-Tour</h6>
+                </div>
+                <div class="col-sm-4">
+                    <h6>About The Website</h6>
+                    <p>This website is created with the purpose of completing Software Engineering project provided by James Cook University</p>
+                
+                </div>
+                <div class="col-sm-2">
+                    <h6>Navigation</h6>
+                    <ul class="unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html">Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h6>Follow Us</h6>
+                        <a href="https://www.facebook.com/fractour2014" target="_blank"><img src="images/facebook_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="https://twitter.com/fractour" target="_blank"><img src="images/twitter_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="http://instagram.com/fractour" target="_blank"><img src="images/instagram_icon.png" style="width:30px; height:27px;"/></a>
+                </div>
+                
+                <div class="col-sm-2">
+                    <h6>Coded by &copy; IDETIVE</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+</body>
+
+</html>

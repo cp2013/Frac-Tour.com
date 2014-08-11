@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FracTour | Wonderful Italy</title>
+<link href="images/FracTour_Logo.png" rel="shortcut icon" />
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/signin_signout.js"></script>		
+<style>
+.container .row .heading{
+	text-transform:uppercase;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#999;	
+}
+
+.container .row .heading-content{
+	text-transform:uppercase;
+	font-family:Verdana, Geneva, sans-serif;
+}
+
+.container .jumbotron p{
+	font-size:15px;
+	text-align:justify;
+}
+.container .jumbotron .row .col-md-7{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;	
+}
+.nav-tabs > li > a{
+	color:black;
+	font-family:Verdana, Geneva, sans-serif;	
+}
+.tab-content {
+	background-color:white;
+	padding:10px;
+	padding-left:15px;
+	border:1px solid #ddd;
+
+}
+.tab-content #itinerary > h5{
+	margin-bottom:0;
+}
+.tab-content #itinerary > p{
+	font-size:13px;		
+	margin-top:5px;
+	padding:0;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+	.tour {
+		width: 100%;
+	}
+
+	.tour-label {
+		width:auto;	
+		left:15px;
+		right:15px;
+	}
+}
+</style>
+</head>
+<body>
+<div class="container"  style="width:100%; margin:0; padding:0;"><!--Wrapping the whole elements in order to be responsive-->
+    <div class="mainContent" style="position:relative; width:100%;">	<!-- Wrapping the navigation bar START -->
+    
+        <div class="navbar navbar-inverse navbar-static-top"><!-- Navigation Bar START -->
+        
+            <div class="container"><!-- Container START -->
+                
+                <a href="index.html"><img src="images/FracTour_Logo.png" width="50" height="40" class="lfloat"/></a>
+                
+                
+                <!-- Displaying 3 icon bars for small screen dimensions -->
+                <button class= "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Navbar for small screen dimensions -->
+                <div class="collapse navbar-collapse navHeaderCollapse"><!-- collapse navbar START -->
+                    
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html" >Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    
+                        <li id="statusbox"><a href="#" class="signin">Login</a></li>
+                        <li><a href="user_registration.html" target="_blank">Register</a></li>
+                        <li><a href="admin_login.html" target="_blank">Admin</a></li> 
+                    
+                    </ul>
+                
+                </div><!-- Collapse navbar END -->
+                
+            </div><!-- Container END -->
+        
+        </div><!-- Navigation Bar END -->
+        
+    <div class="mask">
+        <div class="loginpopup">
+            <a href="#" class="close"><img src="images/closeBtn.png" class="closeBtn" title="Close Window" alt="Close" /></a>
+            <form name="userloginform" method="post" action="" class="signinform">
+            <fieldset class="textbox">
+                <label class="email">
+                    <span>Email : </span>
+                    <input type="text" id="email" name="email">
+                </label>
+                <label class="password">
+                    <span>Password : </span>
+                    <input type="password" id="password" name="password">
+                </label>
+                <span><label class="warningtxt" style="color:#F00; display:none;">Invalid Email/Password</label></span>
+                <button type="button" style="margin-left:65px;" onclick="signin()">Sign In</button>			    
+                <div class="separator">               
+                    <p>------------- OR -------------</p>              
+                </div>
+				<img src="images/login-facebook.png" style="width:202px;">
+            </fieldset>
+            </form>
+        </div>
+    </div>    
+    
+    </div><!--Wrapping the navigation bar END -->
+</div>    		 
+<div class="container">
+	<div class="row" style="padding:5px;">
+    	<h3 class="heading">Tour Destinations</h3>
+        <hr/>
+    </div>    
+
+    <div class="jumbotron">
+        <div class="row">
+        	<div class="col-md-8">
+                <h3 class="heading-content">Wonderful Italy <span style="color:#F90; text-transform:lowercase;">(9 Days 8 Nights)</span> </h3>
+                <p style="font-family:Arial, Helvetica, sans-serif; color:#F90; font-size:22px;"><strong>Price: $3000</strong></p>
+            </div>
+            <div class="col-md-4">
+            	<img src="images/book-now.png">
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-5" style="text-align:center;">
+                <img src="images/venice.jpg" style="max-width:98%; max-height:90%" height="320" class="img-rounded"/>
+            </div>
+            <div class="col-md-7" style="padding-top:10px;">
+                <table width="520" class="table-responsive" >
+                <tr>
+                    <td width="116"><strong>Countries</strong></td>
+                    <td width="21">:</td>
+                    <td width="367">Italy</td>
+                </tr>
+                <tr>
+                    <td><strong>State / Cities</strong></td>
+                    <td>:</td>
+                    <td>Rome, Milan, Florence, and Venice</td>
+                </tr>
+                <tr>
+                    <td><strong>Category</strong></td>
+                    <td>:</td>
+                    <td>Family Trip</td>
+                </tr>
+                <tr>
+                    <td><strong>Travel Dates</strong></td>
+                    <td>:</td>
+                    <td>Valid until 17 December 2015</td>
+                </tr>
+                <tr>
+                    <td><strong>Duration</strong></td>
+                    <td>:</td>
+                    <td>9 Days 8 Nights</td>
+                </tr>
+                <tr>
+                    <td><strong>Tour Code</strong></td>
+                    <td>:</td>
+                    <td>IT98</td>
+                </tr>                               
+                </table> 
+                <hr style="border-top: 1px solid #CCC;">
+                <h4>Highlights</h4>
+                <ul>
+                    <li>Stay in La Spezia in the Cinque Terre region </li>
+                    <li>Explore Milan, the Italy's fashion capital</li>
+                    <li>Re-enact the balcony scene from Romeo and Juliet in fair Verona where the story was set</li>
+                    <li>Explore the floating city of Venice with a private boat</li>
+                </ul>
+                <hr style="border-top: 1px solid #CCC;">
+            </div>
+        </div>
+        
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#itinerary" role="tab" data-toggle="tab">ITINERARY</a></li>
+            <li><a href="#price" role="tab" data-toggle="tab">PRICE DETAILS</a></li>
+            <li><a href="#disclaimer" role="tab" data-toggle="tab">DISCLAIMER</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="itinerary">
+	            <h5><strong>Day 1</strong></h5>
+                <p>Check-in to your hotel, drop off your stuff, meet your Tour Manager and travel buddies at 4:00pm and head out into the streets of Italy to get a sneak peek at vibrant Rome.</p>
+                
+	            <h5><strong>Day 2</strong></h5>
+                <p>Travel south towards the home of pizza, Naples. This morning there's your chance to take a guided tour of ancient Pompeii. Later, we'll reach Sorrento, where you'll enjoy a sunset drink overlooking the stunning bay.</p>
+            	
+                <h5><strong>Day 3</strong></h5>
+                <p>This morning, it's a boat ride to the main marina of the island of Capri, famous for its stunning caves and surrounding rock formations.There's a chance to join a local guide for a tour of Capri and Anacapri before you have free time to explore Sorrento's web of narrow streets or the Villa Communale Park, which has stunning views of Mt Vesuvius.</p>
+	            
+                <h5><strong>Day 4</strong></h5>
+                <p>Wind through the Apennine Mountains and Tuscan countryside to the Renaissance city of Florence.</p>
+                <p>Before arriving in Florence, we'll stop off for a wine tasting in the rustic hills of the gorgeous Tuscan countryside, known for its iconic cypress trees and olive oil. In an historic villa, the group will see a working winery, complete with its old cellar and vats. Here you can learn more about the region's wines as you taste a glass or two of the local wine.</p>
+                <p>Then, it's on to breathtaking Florence. The scene-stealing Duomo Cathedral rises above the city's centre, which serves up frescoes, markets and priceless art. After dinner, walk along the River Arno with your Tour Manager, take in the atmosphere and head into the heart of Florence, where you can sit back and relax Tuscan style with a glass of Chianti wine.</p>
+	            
+                <h5><strong>Day 5</strong></h5>
+                <p>Jump start the day uncovering this open-air museum. Our Local Guide gives you the inside track as the group learns about Florence's cultural beginnings and explores streets crammed with artworks from masters like Michelangelo. Then take a look into a skillful demonstration of Florentine leather making and understand this region's traditional art.</p>
+                <p>With bargains and bustle, the city's markets are a great place to hang out. Grab a gelato and enjoy this gorgeous city.</p>
+                <p>Tonight, there's a choice of a group dinner - an authentic Tuscan feast. Try regional dishes in the pretty Tuscan country setting. Then keep it moving with a night out and get your groove on at Florence's biggest club.</p>
+	            
+                <h5><strong>Day 6</strong></h5>
+				<p>Say "arriverderci" to Florence, before professing your love in Romeo & Juliet's home of Verona. Next up: the canals and gondolas of Venice.</p>
+                
+                <h5><strong>Day 7</strong></h5>
+                <p>Known as the "floating city", Venice is packed with character, crammed with hidden lanes and linked by a network of canals.</p>
+                <p>The group travels on our private boat through the waters of the lagoon to visit the city's historical heart. The limestone Bridge of Sighs, the Gothic arches of the Doge's Palace and the expanse of St. Mark's Square (pigeons and all!) show off Venice's unique beauty and way of life.</p>
+                <p>Take some time to explore the floating city and lose yourself in the backstreets. There's an optional walking tour where you can discover the labyrinth of interweaving lanes, waterways, palaces, piazzi and markets with our Local Guide. You'll see historic monuments, hidden treasures and the Rialto market – a local favourite for food shopping.</p>
+                <p>Maybe grab a table on St. Mark's Square and eat some delicious Italian food al fresco.</p>
+                <p>Cap off the day with an optional gondola ride & share this amazing experience with your friends - seeing Venice from on the water is unforgettable!</p>
+                
+                <h5><strong>Day 8</strong></h5>
+                <p>Along the pretty shores of Lake Garda, we drop into the quintessential European lake town of Sirmione, complete with vine-covered villas, Roman ruins and a castle.</p>
+                <p>Later, the energy levels turn up a notch as we head to Italy's fashion capital and economic powerhouse, Milan.</p>
+                <p>Your Tour Manager will show off Milan's monuments and talk to you about the massive Duomo Cathedral, the elegant shopping arcade of Galleria Vittorio Emanuele II and the world-famous La Scala Opera House, where many singing greats have graced the stage.</p>
+                <p>With a free afternoon, hit the streets of this cool capital and you'll be rewarded with designer stores and funky little boutiques. Your Tour Manager, who knows Milan's ins and outs, will be happy to point you in the right direction for the best buys before you flash the plastic.</p>
+                
+                <h5><strong>Day 9</strong></h5>
+                <p>Heading south, we hit the national park and UNESCO World Heritage site of the Cinque Terre, where colourful coastal villages dot 18 kilometres of ragged cliffs and old walled vineyards tumble down the hillside almost to the water's edge.</p>
+                <p>It's a great journey by train along the coast, giving you the chance to take in the unique atmosphere. Watch the locals fishing along the shore, rub shoulders with the rich in famous in Portovenere and check out picture-postcard town of Monterosso.</p>
+                <p>Later chill out and get a slice of the good life, grab a table at a beachfront cafe and try some mouthwatering pesto with locally baked foccacia bread.</p>
+                
+                <div class="row">
+                    <div class="col-md-12" style="text-align:center;">
+                        <a href="itinerary/wonderful_italy.pdf" target="_blank"><img src="images/pdf-download.jpg" title="Download this itinerary as PDF File"></a>
+                    </div>
+                    <div class="col-md-1""></div>          
+                </div>
+
+            </div>
+            <div class="tab-pane" id="price">Price Details</div>
+            <div class="tab-pane" id="disclaimer">Disclaimer</div>
+        </div>
+        <!-- End Tabs -->
+    </div>
+
+</div>
+    <!-- Footer section -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h6>Copyright &copy; 2014 Frac-Tour</h6>
+                </div>
+                <div class="col-sm-4">
+                    <h6>About The Website</h6>
+                    <p>This website is created with the purpose of completing Software Engineering project provided by James Cook University</p>
+                
+                </div>
+                <div class="col-sm-2">
+                    <h6>Navigation</h6>
+                    <ul class="unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html">Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h6>Follow Us</h6>
+                        <a href="https://www.facebook.com/fractour2014" target="_blank"><img src="images/facebook_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="https://twitter.com/fractour" target="_blank"><img src="images/twitter_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="http://instagram.com/fractour" target="_blank"><img src="images/instagram_icon.png" style="width:30px; height:27px;"/></a>
+                </div>
+                
+                <div class="col-sm-2">
+                    <h6>Coded by &copy; IDETIVE</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FracTour | American Dream</title>
+<link href="images/FracTour_Logo.png" rel="shortcut icon" />
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/signin_signout.js"></script>		
+<style>
+.container .row .heading{
+	text-transform:uppercase;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color:#999;	
+}
+
+.container .row .heading-content{
+	text-transform:uppercase;
+	font-family:Verdana, Geneva, sans-serif;
+}
+
+.container .jumbotron p{
+	font-size:15px;
+	text-align:justify;
+}
+.container .jumbotron .row .col-md-7{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;	
+}
+.nav-tabs > li > a{
+	color:black;
+	font-family:Verdana, Geneva, sans-serif;	
+}
+.tab-content {
+	background-color:white;
+	padding:10px;
+	padding-left:15px;
+	border:1px solid #ddd;
+
+}
+.tab-content #itinerary > h5{
+	margin-bottom:0;
+}
+.tab-content #itinerary > p{
+	font-size:13px;		
+	margin-top:5px;
+	padding:0;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+	.tour {
+		width: 100%;
+	}
+
+	.tour-label {
+		width:auto;	
+		left:15px;
+		right:15px;
+	}
+}
+</style>
+</head>
+<body>
+<div class="container"  style="width:100%; margin:0; padding:0;"><!--Wrapping the whole elements in order to be responsive-->
+    <div class="mainContent" style="position:relative; width:100%;">	<!-- Wrapping the navigation bar START -->
+    
+        <div class="navbar navbar-inverse navbar-static-top"><!-- Navigation Bar START -->
+        
+            <div class="container"><!-- Container START -->
+                
+                <a href="index.html"><img src="images/FracTour_Logo.png" width="50" height="40" class="lfloat"/></a>
+                
+                
+                <!-- Displaying 3 icon bars for small screen dimensions -->
+                <button class= "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Navbar for small screen dimensions -->
+                <div class="collapse navbar-collapse navHeaderCollapse"><!-- collapse navbar START -->
+                    
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html" >Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    
+                        <li id="statusbox"><a href="#" class="signin">Login</a></li>
+                        <li><a href="user_registration.html" target="_blank">Register</a></li>
+                        <li><a href="admin_login.html" target="_blank">Admin</a></li> 
+                    
+                    </ul>
+                
+                </div><!-- Collapse navbar END -->
+                
+            </div><!-- Container END -->
+        
+        </div><!-- Navigation Bar END -->
+        
+    <div class="mask">
+        <div class="loginpopup">
+            <a href="#" class="close"><img src="images/closeBtn.png" class="closeBtn" title="Close Window" alt="Close" /></a>
+            <form name="userloginform" method="post" action="" class="signinform">
+            <fieldset class="textbox">
+                <label class="email">
+                    <span>Email : </span>
+                    <input type="text" id="email" name="email">
+                </label>
+                <label class="password">
+                    <span>Password : </span>
+                    <input type="password" id="password" name="password">
+                </label>
+                <span><label class="warningtxt" style="color:#F00; display:none;">Invalid Email/Password</label></span>
+                <button type="button" style="margin-left:65px;" onclick="signin()">Sign In</button>			    
+                <div class="separator">               
+                    <p>------------- OR -------------</p>              
+                </div>
+				<img src="images/login-facebook.png" style="width:202px;">
+            </fieldset>
+            </form>
+        </div>
+    </div>    
+    
+    </div><!--Wrapping the navigation bar END -->
+</div>    		 
+<div class="container">
+	<div class="row" style="padding:5px;">
+    	<h3 class="heading">Tour Destinations</h3>
+        <hr/>
+    </div>    
+
+    <div class="jumbotron">
+        <div class="row">
+        	<div class="col-md-8">
+                <h3 class="heading-content">American Dream <span style="color:#F90; text-transform:lowercase;">(11 Days 9 Nights)</span> </h3>
+                <p style="font-family:Arial, Helvetica, sans-serif; color:#F90; font-size:22px;"><strong>Price: $1850</strong></p>
+            </div>
+            <div class="col-md-4">
+            	<img src="images/book-now.png">
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-5" style="text-align:center;">
+                <img src="images/goldengatebridge.jpg" style="max-width:98%; max-height:90%" height="320" class="img-rounded"/>
+            </div>
+            <div class="col-md-7" style="padding-top:10px;">
+                <table width="520" class="table-responsive" >
+                <tr>
+                    <td width="116"><strong>Countries</strong></td>
+                    <td width="21">:</td>
+                    <td width="367">America</td>
+                </tr>
+                <tr>
+                    <td><strong>State / Cities</strong></td>
+                    <td>:</td>
+                    <td>Los Angeles, San Francisco, and Las Vegas</td>
+                </tr>
+                <tr>
+                    <td><strong>Category</strong></td>
+                    <td>:</td>
+                    <td>Family Trip</td>
+                </tr>
+                <tr>
+                    <td><strong>Travel Dates</strong></td>
+                    <td>:</td>
+                    <td>Valid until 25 November 2014</td>
+                </tr>
+                <tr>
+                    <td><strong>Duration</strong></td>
+                    <td>:</td>
+                    <td>11 Days 9 Nights</td>
+                </tr>
+                <tr>
+                    <td><strong>Tour Code</strong></td>
+                    <td>:</td>
+                    <td>US119</td>
+                </tr>                               
+                </table> 
+                <hr style="border-top: 1px solid #CCC;">
+                <h4>Highlights</h4>
+                <ul>
+                    <li>Visit the most wonderful spot to view the World's Golden Gate Bridge</li>
+                    <li>Let's have fun in Disneyland or California Adventure Park</li>
+                    <li>Enjoy tour time in Universal Studio</li>
+                    <li>Explore the prosperity of night life in Las Vegas</li>
+                    <li>Enjoy our optional tours there</li>
+                </ul>
+                <hr style="border-top: 1px solid #CCC;">
+            </div>
+        </div>
+        
+        <!-- Tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#itinerary" role="tab" data-toggle="tab">ITINERARY</a></li>
+            <li><a href="#price" role="tab" data-toggle="tab">PRICE DETAILS</a></li>
+            <li><a href="#disclaimer" role="tab" data-toggle="tab">DISCLAIMER</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="itinerary">
+	            <h5><strong>Day 1 : Singapore - Los Angeles</strong></h5>
+                <p>Your exciting holiday with AD Travel begins with a pleasant flight to Los Angeles. Upon arrival at Los Angeles Airport, meet and greet by local representative and transfer to hotel.</p>
+                
+	            <h5><strong>Day 2 : Disneyland OR California Adventure Park</strong></h5>
+                <p>Wake up to a fun-filled day, morning as we take a hotel shuttle service to the wonderful world of Disneyland (with entrance ticket). You will be given a one day passport, explore the many attraction and fun rides available here at Fantasyland, Adventure Land, Frontier Land, Tomor-row Land and Mickey Toon Town. Keep a look out for your favourite Disney Cartoon characters.</p>
+            	
+                <h5><strong>Day 3 : Los Angeles / Solvang / Hearst Castle</strong></h5>
+                <p>Leave L.A in the morning and take a scenic route along the Pacific Coast Highway and arrive in Solvang, a town which is more Danish in character than Demark. Continue north to San Simon for an optional visit to Hearst Castle (exclude entrance ticket- US$25 per person), the only castle to be found in American soil. You will marvel at the priceless collections of art and antique pieces and the flit-edged swimming pool. Arrive in San Francisco in the evening.</p>
+	            
+                <h5><strong>Day 4 : San Francisco / City Tour / San Francisco</strong></h5>
+                <p>Morning, proceed for a city tour in San Francisco. Visit the world's famous Golden Gate Bridge, Fishman's Wharf, Lombard Street, and Palace of Fine Arts. San Francisco after-noon city tour (Optional: USD25 per person): Civic Center, Twin Peaks, and Castro Street.</p>
+	            
+                <h5><strong>Day 5 : San Francisco / Yosemite National Park / Los Angeles</strong></h5>
+                <p>Go north from Fresno to Yosemite in the morning through mile of vineyards, orchards and fertile farmland of California. Entering Yosemite National Park to view those beautiful waterfalls and walk along trails among towering pine trees, after that depart for the fabulous city of Los Ange-les.</p>
+	            
+                <h5><strong>Day 6 : Los Angeles / Universal Studios</strong></h5>
+				<p>In the morning, drives pass Chinatown, Music Centre where the Oscar Award Ceremony is held annually. The famous Hollywood Area, also visit Mann's Chinese Theatre. After that leave for Universal Studios to see how and where movies and TV shows are made. Face King Kong as he unleashes 30 feet and 30,000 pounds of howling, growling, living terror, just 35 inches from your unbelieving eyes. Be thrilled by the "Stun Show Cowboys", be attached by the shark from "Jaws", experience the earthquake, see the "Water World" show, "Back Draft" and the newest attraction of "Jurassic Park". Tour end around 5pm.</p>
+                
+                <h5><strong>Day 7 : Los Angeles / Factory Outlets / Las Vegas</strong></h5>
+                <p>Morning, transfer by coach to Las Vegas. Upon arrival, visit Las Vegas Blvd., and then check in hotel free at leisure. Evening, you can take an optional night tour to explore the prosperity of night life in Las Vegas and see the famous shows such as the Fremont Street Viva Vision, Fountain Show at Bellagio and Mardi Gras at Rio.</p>
+                
+                <h5><strong>Day 8 : Las Vegas / Hoover Dam / Grand Canyon West Rim / Las Vegas</strong></h5>
+                <p>This morning we will proceed to one of the 7 wonders of the world – the Grand Canyon National Park via Hoover Dam - it was constructed in 1931 and completed in 1935, it raised 736ft above the Colorado River, this is one of the highest dam ever built and impound Lake Mead which happen to be one of the largest man- made lakes in the western hemisphere. Continue our tour to Grand Canyon West Rim. The Canyon is much greater both in area and beauty than most people generally imagine. You may take an optional visit to "Skywalk", which is the new gigantic construction built on the very edge of the Grand Canyon West Rim. The Skywalk is suspended 4000 feet above the Colorado River. This $60 million dollar bridge can withstand the weight of 71 fully loaded Boeing 747 airplanes (more than 71 million pounds). You may take an optional helicopter and boat tour to see the true beauty of the Grand Canyon. Late after-noon, return to Las Vegas.</p>
+                
+                <h5><strong>Day 9 : Ethel M Chocolate Factory / Botanical Cactus Gardens / Los Angeles</strong></h5>
+                <p>Depart L.A. by Luxurious tour bus, and visit Ethel M Chocolate Factory and Botanical Cactus Gardens. Stop by Barstow for short rest before continuing back to Los Angeles.</p>
+                
+                <h5><strong>Day 10 : Los Angeles - Singapore - Cross International Date</strong></h5>
+                <p></p>
+                
+                <h5><strong>Day 11 : Arrive Singapore</strong></h5>
+                <p>Arrive home with wonderful souvenirs and unforgettable memories of your most memorable America tour.</p>
+                
+                <div class="row">
+                    <div class="col-md-12" style="text-align:center;">
+                        <a href="itinerary/american_dream.pdf" target="_blank"><img src="images/pdf-download.jpg" title="Download this itinerary as PDF File"></a>
+                    </div>
+                    <div class="col-md-1""></div>          
+                </div>
+                
+            </div>
+            <div class="tab-pane" id="price">Price Details</div>
+            <div class="tab-pane" id="disclaimer">Disclaimer</div>
+        </div>
+        <!-- End Tabs -->
+    </div>
+
+</div>
+    <!-- Footer section -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h6>Copyright &copy; 2014 Frac-Tour</h6>
+                </div>
+                <div class="col-sm-4">
+                    <h6>About The Website</h6>
+                    <p>This website is created with the purpose of completing Software Engineering project provided by James Cook University</p>
+                
+                </div>
+                <div class="col-sm-2">
+                    <h6>Navigation</h6>
+                    <ul class="unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html">Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h6>Follow Us</h6>
+                        <a href="https://www.facebook.com/fractour2014" target="_blank"><img src="images/facebook_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="https://twitter.com/fractour" target="_blank"><img src="images/twitter_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="http://instagram.com/fractour" target="_blank"><img src="images/instagram_icon.png" style="width:30px; height:27px;"/></a>
+                </div>
+                
+                <div class="col-sm-2">
+                    <h6>Coded by &copy; IDETIVE</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+</body>
+
+</html>

@@ -3,7 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="images/FracTour_Logo.png" rel="shortcut icon" />
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css" />
 <title>FracTour | Admin Login</title>
 <script type="text/javascript">
 	function login(){
@@ -53,11 +55,11 @@
 
 <body>
 <div class="container">
-    <form class="form-signin" role="form" action="adminlogin.php">
+    <form class="form-signin" role="form">
     	<h2 class="form-signin-heading">Admin Login</h2>
     	<input name="username" type="text" class="form-control" placeholder="Username" required autofocus>
     	<input name="password" type="password" class="form-control" placeholder="Password" required>
-   		<input name="submit" type="submit" class="btn btn-lg btn-primary btn-block" value="Sign in"/>
+   		<input name="submit" type="button" class="btn btn-lg btn-primary btn-block" value="Sign in" onclick="login()"/>
     </form>
 </div>
 </body>
