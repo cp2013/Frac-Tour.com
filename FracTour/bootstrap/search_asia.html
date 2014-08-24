@@ -10,7 +10,8 @@
 <link href="css/styles.css" rel="stylesheet">
 <script type="text/javascript" src="js/jquery-1.8.2.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/signin_signout.js"></script>		
+<script type="text/javascript" src="js/signin_signout.js"></script>
+<script type="text/javascript" src="js/facebooklogin.js"></script>		
 <style>
 .container .row .heading{
 	text-transform:uppercase;
@@ -119,7 +120,7 @@ and (min-width : 321px) {
                 <div class="separator">               
                     <p>------------- OR -------------</p>              
                 </div>
-				<img src="images/login-facebook.png" style="width:202px;">
+				<a href="#" onClick="fb_login();"><img src="images/login-facebook.png" style="width:202px;"></a>
             </fieldset>
             </form>
         </div>

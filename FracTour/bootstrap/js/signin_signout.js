@@ -17,9 +17,9 @@ $(document).ready(function () {
 		return false;
 	});
 
-        var loggedin = CheckUserLoggedIn();
+    var loggedin = CheckUserLoggedIn();
 	if(loggedin != false){
-		document.getElementById('statusbox').innerHTML = 'Welcome, ' + loggedin + ' | <div class="row"><div class="col-md-7"><a href="user_managebooking.html">MANAGE BOOKING</a></div>' + ' <div class="col-md-2"><a href="#" onclick="signout()">LOGOUT</a></div></div>';
+		document.getElementById('statusbox').innerHTML = 'Welcome, ' + loggedin + ' | <div class="row"><div class="col-md-7"><a href="user_managebooking.php">MANAGE BOOKING</a></div>' + ' <div class="col-md-2"><a href="#" onclick="signout()">LOGOUT</a></div></div>';
 	}
 
 });
@@ -42,7 +42,7 @@ function signin(){
 			else{
 				//close the login popup box
 				$('.mask, .loginpopup').hide();
-                document.getElementById('statusbox').innerHTML = 'Welcome, ' + response[0] + ' | <div class="row"><div class="col-md-7"><a href="user_managebooking.html">MANAGE BOOKING</a></div>' + ' <div class="col-md-2"><a href="#" onclick="signout()">LOGOUT</a></div></div>';
+                document.getElementById('statusbox').innerHTML = 'Welcome, ' + response[0] + ' | <div class="row"><div class="col-md-7"><a href="user_managebooking.php">MANAGE BOOKING</a></div>' + ' <div class="col-md-2"><a href="#" onclick="signout()">LOGOUT</a></div></div>';
 			}
 		}
 	});

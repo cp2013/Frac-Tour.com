@@ -1,10 +1,14 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FracTour | About Us</title>
+<title>FracTour | Manage Your Booking</title>
 <link href="images/FracTour_Logo.png" rel="shortcut icon" />
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
@@ -12,15 +16,49 @@
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/signin_signout.js"></script>	
 <script type="text/javascript" src="js/facebooklogin.js"></script>
+<script type="text/javascript" src="js/managebooking.js"></script>
 <style>
 	.container .row .heading{
 		text-transform:uppercase;
 		font-family:Georgia, "Times New Roman", Times, serif;
 		color:#999;
 	}
-
+	#tablebooking{
+		overflow:auto;
+	}
 </style>
+<?php
+	// connect to database server 
+	$connection = mysql_connect("localhost", "root", "");
+	if ( !$connection ) {
+		die('Could not connect to host.');	
+	}
+	
+	// select a database
+	$db = mysql_select_db("fractour", $connection);
+	if ( !$db) {
+		die ('Could not find database.');	
+	}
+
+	$error = "";
+	
+	// if user clicked Edit button
+	if (isset($_REQUEST['Edit']))
+	{
+		if ( !isset($_REQUEST['bookid']) ) {
+			$error = "<strong style='color:red'>Use radio button to select the booking that you want to edit.</strong>";
+		}
+		else {
+			$modify_query = "UPDATE booking SET amount='" . $_REQUEST['amount'] . "', passport='" . $_REQUEST['passport'] . "', expired='" . $_REQUEST['expired'] . "', title='" . $_REQUEST['title'] . "', firstname='" . $_REQUEST['firstname'] . "', lastname='" . $_REQUEST['lastname'] . "', dob='" . $_REQUEST['dob'] . "', nationality='" . $_REQUEST['nationality'] . "', phone='" . $_REQUEST['phone'] . "' WHERE book_id= '" . $_REQUEST['bookid'] . "'";
+			$result = mysql_query($modify_query, $connection);
+			if ($result == TRUE){
+				$error = "<strong style='color:blue'>Your booking has been updated successfully.</strong>";
+			}
+		}
+	}
+?>
 </head>
+
 <body>
 <div class="container"  style="width:100%; margin:0; padding:0;"><!--Wrapping the whole elements in order to be responsive-->
     <div class="mainContent" style="position:relative; width:100%;">	<!-- Wrapping the navigation bar START -->
@@ -88,30 +126,83 @@
     </div><!--Wrapping the navigation bar END -->
 </div>    		 
 <!-- The first section in the homepage END-->
-        
+
 <!-- The second section in the homepage START-->        
 	<div class="container">
     	<div class="row" style="padding:5px;">
-            <h3 class="heading">About Us</h3>
+            <h3 class="heading">Manage Your Booking</h3>
             <hr />
         </div>
-        <div class="row" style="padding:5px;">
-            <p style="text-align:justify;">We are FracTour offering the most convenient tour package booking service on the internet. Founded in 2013, we have a mission to help everyone travel all across the globe, hassle free. Our competitive price and responsive service will pleasure our customer. The various range of destination also has become one of our main selling point in this business. If you want an immediate tour booking service, don't forget to check our latest tour promotion on the main home page.</p>
-                        
-            <h3>Our Services</h3>
-            <ul>
-                <li>Provide the upcoming tour package description</li>
-                <li>Provide the online booking service</li>
-                <li>Get the latest news right on your email</li>
-                <li>Email our friendly customer service to discuss your upcoming trip</li>
-                <li>Airport Pickup</li>
-                <li>Flight and Accommodation services</li>
-            </ul> 
-            <h3>Disclaimer</h3>
-            <p style="text-align:justify;">FracTour <strong>DOES NOT</strong> provide the Web site as a service to the public and Web site owners.
-            It is meant for completing the assignment of Software Engineering CP2013 of James Cook University subjects. <strong>All of the contents from this website
-            are "dummy content"</strong> which are created to demonstrate how the real website works. Although FracTour may include links providing direct access to other Internet resources, including Web sites, FracTour is not responsible for the accuracy or content of information contained in these sites. Links from FracTour to third-party sites do not constitute an endorsement by FracTour of the parties or their products and services. The appearance on the Web site of advertisements and product or service information does not constitute an endorsement by FracTour, and FracTour has not investigated the claims made by any advertiser. Product information is based solely on material received from suppliers.
-			</p>
+        <div class="row" style="padding:5px;" id="managebooking">        	
+        	<form action="user_editbooking.php" method="get">
+            <div id="tablebooking">
+            <table class="table table-striped">
+            	<tr>
+                	<th></th>
+                    <th>Tour Code</th>
+                    <th>Service Provider</th>
+                    <th>Tour Date</th>
+                    <th>No. of Persons</th>
+                    <th>Passport No.</th>
+                    <th>Expiry Date</th>
+                    <th>Title</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Date of Birth</th>
+                    <th>Nationality</th>
+                    <th>Mobile Phone</th>
+                    <th>Status</th>
+                </tr>
+                
+                <?php
+                    // connect to database server 
+                    $connection = mysql_connect("localhost", "root", "");
+                    if ( !$connection ) {
+                        die('Could not connect to host.');	
+                    }
+                    
+                    // select a database
+                    $db = mysql_select_db("fractour", $connection);
+                    if ( !$db) {
+                        die ('Could not find database.');	
+                    }
+					
+					$memberEmail = $_SESSION['email'];
+						
+                    $result = mysql_query("SELECT * FROM booking where email = '$memberEmail'", $connection);
+                    
+                    //loop through all table rows
+                    while ($row = mysql_fetch_array($result)) {
+                        echo "<tr>";
+						echo "<td><input name='bookid' type='radio' value='" . $row['book_id'] . "' /></td>";
+                        echo "<td>" . $row['tour'] . "</td>";
+                        echo "<td>" . $row['provider'] . "</td>";
+                        echo "<td>" . $row['date'] . "</td>";
+                        echo "<td><input name='amount' type='text' size=1 value='" . $row['amount'] . "' /></td>";
+                        echo "<td><input name='passport' type='text' size=6 value='" . $row['passport'] . "' /></td>";
+                        echo "<td><input name='expired' type='text' size=10 value='" . $row['expired'] . "' /></td>";                            
+                        echo "<td><input name='title' type='text' size=2 value='" . $row['title'] . "' /></td>";
+                        echo "<td><input name='firstname' type='text' value='" . $row['firstname'] . "' /></td>";
+                        echo "<td><input name='lastname' type='text' size=15 value='" . $row['lastname'] . "' /></td>";
+                        echo "<td>" . $row['email'] . "</td>";
+                        echo "<td><input name='dob' type='text' size=10 value='" . $row['dob'] . "' /></td>";
+                        echo "<td><input name='nationality' type='text' size=15 value='" . $row['nationality'] . "' /></td>";
+                        echo "<td><input name='phone' type='text' size=15 value='" . $row['phone'] . "' /></td>";
+                        echo "<td>" . $row['status'] . "</td>";			
+                        echo "</tr>";										
+                    }
+                    
+                    // close the connection
+                    mysql_close($connection);	
+                ?>
+        	</table>
+            </div>
+            <br>
+            <?php echo $error; ?>
+            <p align="center"><input type='submit' name='Edit' value='Update Booking' class="btn btn-primary"/><br></p>
+            </form>
+            <p align="center"><a href="user_managebooking.php"><button class="btn btn-success">Back to View Your Booking</button></a></p>
             <hr/>
     	</div>        
     </div>
@@ -155,7 +246,6 @@
 
 	<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>	
-	
+    
 </body>
-
 </html>

@@ -9,6 +9,7 @@
 <script type="text/javascript" src="js/jquery-1.8.2.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/register.js"></script>
+<script type="text/javascript" src="js/facebookregister.js"></script>
 <style type="text/css">
 	h3.panel-title{
 		font-size:22px;
@@ -61,7 +62,10 @@
  	</div>
   
   	<div class="panel-body">
-    	<h4><span class="required">* </span>Required Fields</h4>
+    	<div class="row">
+        	<div class="col-md-10"><a href="#" onClick="fb_login();"><img src="images/signup-facebook.png" /></a> <strong> - or - Fill the Registration Form Below</strong></div>
+        	<div class="col-md-2"><h4><span class="required">* </span>Required Fields</h4><br /></div>            
+        </div>
         
  		<form class="form-horizontal" role="form" id="signupform" name="signupform" method="post" action="sign_up.php">
         	<fieldset class="scheduler-border">

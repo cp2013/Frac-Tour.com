@@ -1,10 +1,14 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FracTour | Contact Us</title>
+<title>FracTour | Manage Your Booking</title>
 <link href="images/FracTour_Logo.png" rel="shortcut icon" />
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
@@ -12,39 +16,19 @@
 <script type="text/javascript" src="js/bootstrap.js"></script>
 <script type="text/javascript" src="js/signin_signout.js"></script>	
 <script type="text/javascript" src="js/facebooklogin.js"></script>
+<script type="text/javascript" src="js/managebooking.js"></script>
 <style>
-	#map_canvas {
-		width: 500px;
-		height: 400px;
-	}
 	.container .row .heading{
 		text-transform:uppercase;
 		font-family:Georgia, "Times New Roman", Times, serif;
 		color:#999;
+	}	
+	#tablebooking{
+		overflow:auto;
 	}
 </style>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script>
-	function initialize() {
-		var map_canvas = document.getElementById('map_canvas');
-		var myLatLng = new google.maps.LatLng(1.375066, 103.828710);
-		var map_options = {
-		  //center: new google.maps.LatLng(44.5403, -78.5463),
-		  //zoom: 8,
-		  center: myLatLng,		  
-		  zoom: 17,
-		  mapTypeId: google.maps.MapTypeId.ROADMAP
-	}
-		var map = new google.maps.Map(map_canvas, map_options)
-		
-		var marker = new google.maps.Marker({
-		  position: myLatLng,
-		  map: map
-		});
-	}
-	google.maps.event.addDomListener(window, 'load', initialize);
-</script>
 </head>
+
 <body>
 <div class="container"  style="width:100%; margin:0; padding:0;"><!--Wrapping the whole elements in order to be responsive-->
     <div class="mainContent" style="position:relative; width:100%;">	<!-- Wrapping the navigation bar START -->
@@ -72,7 +56,7 @@
                         <li><a href="contact_us.html">Contact Us</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                    
+                    	
                         <li id="statusbox"><a href="#" class="signin">Login</a></li>
                         <li><a href="user_registration.html" target="_blank">Register</a></li>
                         <li><a href="admin_login.html" target="_blank">Admin</a></li> 
@@ -85,78 +69,110 @@
         
         </div><!-- Navigation Bar END -->
         
-        <div class="mask">
-            <div class="loginpopup">
-                <a href="#" class="close"><img src="images/closeBtn.png" class="closeBtn" title="Close Window" alt="Close" /></a>
-                <form name="userloginform" method="post" action="" class="signinform">
-                <fieldset class="textbox">
-                    <label class="email">
-                        <span>Email : </span>
-                        <input type="text" id="email" name="email">
-                    </label>
-                    <label class="password">
-                        <span>Password : </span>
-                        <input type="password" id="password" name="password">
-                    </label>
-                    <span><label class="warningtxt" style="color:#F00; display:none;">Invalid Email/Password</label></span>
-                    <button type="button" style="margin-left:65px;" onclick="signin()">Sign In</button>			    
-                    <div class="separator">               
-                        <p>------------- OR -------------</p>              
-                    </div>
-                    <a href="#" onClick="fb_login();"><img src="images/login-facebook.png" style="width:202px;"></a>
-                </fieldset>
-                </form>
-            </div>
-        </div>    
+    <div class="mask">
+        <div class="loginpopup">
+            <a href="#" class="close"><img src="images/closeBtn.png" class="closeBtn" title="Close Window" alt="Close" /></a>
+            <form name="userloginform" method="post" action="" class="signinform">
+            <fieldset class="textbox">
+                <label class="email">
+                    <span>Email : </span>
+                    <input type="text" id="email" name="email">
+                </label>
+                <label class="password">
+                    <span>Password : </span>
+                    <input type="password" id="password" name="password">
+                </label>
+                <span><label class="warningtxt" style="color:#F00; display:none;">Invalid Email/Password</label></span>
+                <button type="button" style="margin-left:65px;" onclick="signin()">Sign In</button>			    
+                <div class="separator">               
+                    <p>------------- OR -------------</p>              
+                </div>
+				<a href="#" onClick="fb_login();"><img src="images/login-facebook.png" style="width:202px;"></a>
+            </fieldset>
+            </form>
+        </div>
+    </div>    
     
     </div><!--Wrapping the navigation bar END -->
 </div>    		 
-
 <!-- The first section in the homepage END-->
-        
-<!-- The second section in the homepage START-->
-    <div class="container">
-        <div class="row" style="padding:5px;">
-            <h3 class="heading">Contact Us</h3>
+
+<!-- The second section in the homepage START-->        
+	<div class="container">
+    	<div class="row" style="padding:5px;">
+            <h3 class="heading">Manage Your Booking</h3>
             <hr />
         </div>
-		<div class="row" style="padding:5px;">
-            <p>If you have any questions, please feel free to contact us</p>
-            <table width="520">
-                <tr>
-                    <td width="116"><strong>Email</strong></td>
-                    <td width="21">:</td>
-                    <td width="367"><a href = "mailto:fractour@gmail.com">fractour@gmail.com</a></td>
+        <div class="row" style="padding:5px;" id="managebooking">
+            <div id="tablebooking">
+            <table class="table table-striped">
+            	<tr>
+                    <th>Tour Code</th>
+                    <th>Service Provider</th>
+                    <th>Tour Date</th>
+                    <th>No. of Persons</th>
+                    <th>Passport No.</th>
+                    <th>Expiry Date</th>
+                    <th>Title</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Date of Birth</th>
+                    <th>Nationality</th>
+                    <th>Mobile Phone</th>
+                    <th>Status</th>
                 </tr>
-                <tr>
-                    <td><strong>Facebook</strong></td>
-                    <td>:</td>
-                    <td><a href="https://www.facebook.com/fractour2014" target="_blank">Frac Tour</a></td>
-                </tr>
-                <tr>
-                    <td><strong>Twitter</strong></td>
-                    <td>:</td>
-                    <td><a href="https://twitter.com/fractour" target="_blank">@FracTour</a></td>
-                </tr>
-                <tr>
-                    <td><strong>Instagram</strong></td>
-                    <td>:</td>
-                    <td><a href="http://instagram.com/fractour" target="_blank">fractour</a></td>
-                </tr>
-                <tr>
-                    <td><strong>Address</strong></td>
-                    <td>:</td>
-                    <td>600 Upper Thomson Road, Singapore 574421</td>
-                </tr>
-            </table>
-        </div> 
-    	<div class="row" style="padding:5px;">
-	        <div id="map_canvas" style="width:50%; margin:10px auto;"></div>
+                
+                <?php
+                    // connect to database server 
+                    $connection = mysql_connect("localhost", "root", "");
+                    if ( !$connection ) {
+                        die('Could not connect to host.');	
+                    }
+                    
+                    // select a database
+                    $db = mysql_select_db("fractour", $connection);
+                    if ( !$db) {
+                        die ('Could not find database.');	
+                    }
+					
+					$memberEmail = $_SESSION['email'];
+						
+                    $result = mysql_query("SELECT * FROM booking where email = '$memberEmail'", $connection);
+                    
+                    //loop through all table rows
+                    while ($row = mysql_fetch_array($result)) {
+                        echo "<tr>";
+                        echo "<td>" . $row['tour'] . "</td>";
+                        echo "<td>" . $row['provider'] . "</td>";
+                        echo "<td>" . $row['date'] . "</td>";
+                        echo "<td>" . $row['amount'] . "</td>";
+                        echo "<td>" . $row['passport'] . "</td>";
+                        echo "<td>" . $row['expired'] . "</td>";                            
+                        echo "<td>" . $row['title'] . "</td>";
+                        echo "<td>" . $row['firstname'] . "</td>";
+                        echo "<td>" . $row['lastname'] . "</td>";
+                        echo "<td>" . $row['email'] . "</td>";
+                        echo "<td>" . $row['dob'] . "</td>";
+                        echo "<td>" . $row['nationality'] . "</td>";
+                        echo "<td>" . $row['phone'] . "</td>";
+                        echo "<td>" . $row['status'] . "</td>";			
+                        echo "</tr>";										
+                    }
+                    
+                    // close the connection
+                    mysql_close($connection);	
+                ?>
+        	</table>
+            </div>
+            <br>
+            <p align="center">
+            	<a href="user_editbooking.php"><button class="btn btn-primary">Edit Booking</button></a>
+            	<a href="user_cancelbooking.php"><button class="btn btn-danger">Cancel Booking</button></a>
+            </p>
             <hr/>
-        </div>
-    </div>        
-
-
+    	</div>        
+    </div>
     <!-- Footer section -->
 	
     <div class="footer">
@@ -197,7 +213,6 @@
 
 	<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>	
-	
+    
 </body>
-
 </html>

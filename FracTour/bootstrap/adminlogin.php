@@ -20,7 +20,7 @@ if($count == 1){
 	session_start();
 	$_SESSION['username'] = $adminUsername;
 	$_SESSION['password'] = $adminPassword;
-	header("location:admin_home.html");
+	header("location:admin_home.php");
 }
 else{
 	echo "<h3>Invalid Username and/or Password</h3>";
