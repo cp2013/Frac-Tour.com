@@ -13,18 +13,6 @@ function validateForm(theForm){
 	var valPhoneCode = validatePhoneCode(theForm.phonecode);
 	var valPhone = validatePhone(theForm.phone);
 	var valCheckBox = validateCheckBox(theForm.checkbox);
-	
-	/*if(valUsername && valPassword && valConfirmPassword && valFName && valLName && valAge && valPhone && valEmail){ 
-			$.ajax({
-				type:"POST",
-				url:"sign_up.php",
-				data:{"username":theForm.username.value, "password":theForm.password.value, "firstname":theForm.firstname.value, "lastname":theForm.lastname.value, "age":theForm.age.value, "phone":theForm.phone.value, "email":theForm.email.value},
-				dataType: "json",
-				success: function(response){
-					alert(response);
-				}
-			});
-	}*/
 }
 
 function validateEmail(field){
@@ -242,7 +230,7 @@ function validatePhone(field){
 
 function validateCheckBox(field){
 	if(!field.checked){
-		document.getElementById("errorCheckBox").innerHTML = "<br>Please tick the checkbox";
+		document.getElementById("errorCheckBox").innerHTML = "Please tick the checkbox";
 		return false;
 	} else{
 		document.getElementById("errorCheckBox").innerHTML = "";

@@ -1,105 +1,161 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="images/FracTour_Logo.png" rel="shortcut icon" />
-<link href="style.css" rel="stylesheet" type="text/css"/>
-<link href="nivo-slider.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="slider_style.css" rel="stylesheet" type="text/css" media="screen" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FracTour | About Us</title>
-<script type="text/javascript">
-	$(document).ready(function(){
-		// show popup when you click on the link
-		$('.signin').click(function(event){
-			event.preventDefault(); // disable normal link function so that it doesn't refresh the page			
-			$('.mask').show();
-			$('.loginpopup').show(); //display your popup and set height to the page height
-		});
-	 
-		// hide popup when user clicks on close button or outside popup box
-		$('.close, .mask').click(function(){
-			$('.mask, .loginpopup').hide(); // hide the overlay
-			//document.getElementsByClassName('warningtxt')[0].style.display = 'none';
-			return false;
-		});
-		
-		// prevents the overlay from closing if user clicks inside the popup box
-		$('.loginpopup').click(function(){
-			return false;
-		}); 
-	});
-	
-	function signin(){
-		$('.mask, .loginpopup').hide();
+<link href="images/FracTour_Logo.png" rel="shortcut icon" />
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/signin_signout.js"></script>	
+<script type="text/javascript" src="js/facebooklogin.js"></script>
+<style>
+	.container .row .heading{
+		text-transform:uppercase;
+		font-family:Georgia, "Times New Roman", Times, serif;
+		color:#999;
 	}
-</script>
-</head>
 
+</style>
+</head>
 <body>
-	<div id="mainContent">
-    <div class="header" style="z-index:1; position:relative; opacity:1;">
-    <a href="#" target="content"><img src="images/FracTour Logo.png" width="50" height="40" class="lfloat"/></a>
-    <nav id="main-id">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Tour</a></li>
-            <li><a href="about_us.html" target="_blank">About Us</a></li>
-            <li><a href="contact_us.html" target="_blank">Contact Us</a></li>
-            <li><a href="#">Help</a></li>
-			<li class="right"><a href="#" class="signin">Login</a></li>
-            <li><a href="user_registration.html" target="_blank">Register</a></li>
-            <li><a href="admin_login.html" target="_blank">Admin</a></li>           
-        </ul>
-    </nav>
-    </div>
+<div class="container"  style="width:100%; margin:0; padding:0;"><!--Wrapping the whole elements in order to be responsive-->
+    <div class="mainContent" style="position:relative; width:100%;">	<!-- Wrapping the navigation bar START -->
     
+        <div class="navbar navbar-inverse navbar-static-top"><!-- Navigation Bar START -->
+        
+            <div class="container"><!-- Container START -->
+                
+                <a href="index.html"><img src="images/FracTour_Logo.png" width="50" height="40" class="lfloat"/></a>
+                
+                
+                <!-- Displaying 3 icon bars for small screen dimensions -->
+                <button class= "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Navbar for small screen dimensions -->
+                <div class="collapse navbar-collapse navHeaderCollapse"><!-- collapse navbar START -->
+                    
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html" >Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    	
+                        <li id="statusbox"><a href="#" class="signin">Login</a></li>
+                        <li><a href="user_registration.html" target="_blank">Register</a></li>
+                        <li><a href="admin_login.html" target="_blank">Admin</a></li> 
+                    
+                    </ul>
+                
+                </div><!-- Collapse navbar END -->
+                
+            </div><!-- Container END -->
+        
+        </div><!-- Navigation Bar END -->
+        
     <div class="mask">
         <div class="loginpopup">
             <a href="#" class="close"><img src="images/closeBtn.png" class="closeBtn" title="Close Window" alt="Close" /></a>
             <form name="userloginform" method="post" action="" class="signinform">
             <fieldset class="textbox">
-                <label class="username">
-                    <span>Username : </span>
-                    <input type="text" id="username" name="username">
+                <label class="email">
+                    <span>Email : </span>
+                    <input type="text" id="email" name="email">
                 </label>
                 <label class="password">
                     <span>Password : </span>
                     <input type="password" id="password" name="password">
                 </label>
-                <span><label class="warningtxt" style="color:#F00; display:none;">Invalid Username and/or Password</label></span>
-                <button type="button" class="submitBtn" onclick="signin()">Sign In</button>
+                <span><label class="warningtxt" style="color:#F00; display:none;">Invalid Email/Password</label></span>
+                <button type="button" style="margin-left:65px;" onclick="signin()">Sign In</button>			    
+                <div class="separator">               
+                    <p>------------- OR -------------</p>              
+                </div>
+				<a href="#" onClick="fb_login();"><img src="images/login-facebook.png" style="width:202px;"></a>
             </fieldset>
             </form>
         </div>
     </div>    
-</div>
-
-    <div class="about">
-    	<h2>About Us</h2>
-        <hr /><br />
+    
+    </div><!--Wrapping the navigation bar END -->
+</div>    		 
+<!-- The first section in the homepage END-->
         
-        <p>We are James Cook University (JCU) students majoring in Bachelor of Information Technology in Singapore Campus SP52 - 2014. We created this website, called FracTour to complete CP2013 - Software Engineering assesment required for our degree. FracTour is established on 18th July 2014. This website provides online tour reservation which can help user to book our tour packages anywhere and anytime. This software is for study purposes only, so the content might be taken from many sources. Therefore no parties are disadvantaged intentionally.</p>
-        <br />
-        
-        <h3>Supervisor</h3>
-        <br />
-        <p>Dr. June Tay</p>
-        <p>(Lecturer and Tutor of CP2013 in JCU Singapore SP52 - 2014)</p>
-        <br />
-        
-        <h3>Our Team Organization</h3>
-        <br />
-        <p>Ryan Pratama Pangestu Lo / 12758031</p>
-        <p>(Project Manager)</p>
-        <br />
-        <p>Jeffry Herdiyanto / 12764900</p>
-        <p>(Business Analyst)</p>
-        <br />
-        <p>Ricky Setiawan / 12766897</p>
-        <p>(Web Designer)</p>
-        <br />
-        <p>Christian Ing Sunardi / 12768484</p>
-        <p>(Web Programmer)</p>               
+<!-- The second section in the homepage START-->        
+	<div class="container">
+    	<div class="row" style="padding:5px;">
+            <h3 class="heading">About Us</h3>
+            <hr />
+        </div>
+        <div class="row" style="padding:5px;">
+            <p style="text-align:justify;">We are FracTour offering the most convenient tour package booking service on the internet. Founded in 2013, we have a mission to help everyone travel all across the globe, hassle free. Our competitive price and responsive service will pleasure our customer. The various range of destination also has become one of our main selling point in this business. If you want an immediate tour booking service, don't forget to check our latest tour promotion on the main home page.</p>
+                        
+            <h3>Our Services</h3>
+            <ul>
+                <li>Provide the upcoming tour package description</li>
+                <li>Provide the online booking service</li>
+                <li>Get the latest news right on your email</li>
+                <li>Email our friendly customer service to discuss your upcoming trip</li>
+                <li>Airport Pickup</li>
+                <li>Flight and Accommodation services</li>
+            </ul> 
+            <h3>Disclaimer</h3>
+            <p style="text-align:justify;">FracTour <strong>DOES NOT</strong> provide the Web site as a service to the public and Web site owners.
+            It is meant for completing the assignment of Software Engineering CP2013 of James Cook University subjects. <strong>All of the contents from this website
+            are "dummy content"</strong> which are created to demonstrate how the real website works. Although FracTour may include links providing direct access to other Internet resources, including Web sites, FracTour is not responsible for the accuracy or content of information contained in these sites. Links from FracTour to third-party sites do not constitute an endorsement by FracTour of the parties or their products and services. The appearance on the Web site of advertisements and product or service information does not constitute an endorsement by FracTour, and FracTour has not investigated the claims made by any advertiser. Product information is based solely on material received from suppliers.
+			</p>
+            <hr/>
+    	</div>        
     </div>
+    <!-- Footer section -->
+	
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h6>Copyright &copy; 2014 Frac-Tour</h6>
+                </div>
+                <div class="col-sm-4">
+                    <h6>About The Website</h6>
+                    <p>This website is created with the purpose of completing Software Engineering project provided by James Cook University</p>
+                
+                </div>
+                <div class="col-sm-2">
+                    <h6>Navigation</h6>
+                    <ul class="unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="tour.html">Tour</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h6>Follow Us</h6>
+						<a href="https://www.facebook.com/fractour2014" target="_blank"><img src="images/facebook_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="https://twitter.com/fractour" target="_blank"><img src="images/twitter_icon.png" style="width:30px; height:27px;"/></a>
+                        <a href="http://instagram.com/fractour" target="_blank"><img src="images/instagram_icon.png" style="width:30px; height:27px;"/></a>
+                </div>
+                
+                <div class="col-sm-2">
+                    <h6>Coded by &copy; IDETIVE</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--End wrapping the whole elements-->
+
+
+	<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>	
+	
 </body>
+
 </html>

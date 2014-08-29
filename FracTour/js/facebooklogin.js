@@ -21,7 +21,7 @@ function testAPI() {
 	FB.api('/me', function(response) {
 		console.log('Successful login for: ' + response.name);
 		document.getElementById('statusbox').innerHTML =
-		'Welcome, ' + response.name + ' | <div class="row"><div class="col-md-7"><a href="user_managebooking.php">MANAGE BOOKING</a></div>' + ' <div class="col-md-2"><a href="#" onclick="fb_logout()">LOGOUT</a></div></div>';
+		'Welcome, ' + response.name + ' | <div class="row"><div class="col-md-7"><a href="user_managebooking.html">MANAGE BOOKING</a></div>' + ' <div class="col-md-2"><a href="#" onclick="fb_logout()">LOGOUT</a></div></div>';
 	});
 	$('.mask, .loginpopup').hide();
 }

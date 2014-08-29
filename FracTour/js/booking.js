@@ -1,7 +1,7 @@
 $(document).ready(function () {	
     var loggedin = CheckUserLoggedIn();
 	if(loggedin != false){
-		document.getElementById('statusbox').innerHTML = 'Welcome, ' + loggedin + ' | <div class="row"><div class="col-md-7"><a href="user_managebooking.php">MANAGE BOOKING</a></div>' + ' <div class="col-md-2"><a href="#" onclick="signout()">LOGOUT</a></div></div>';
+		document.getElementById('statusbox').innerHTML = 'Welcome, ' + loggedin + ' | <div class="row"><div class="col-md-7"><a href="user_managebooking.html">MANAGE BOOKING</a></div>' + ' <div class="col-md-2"><a href="#" onclick="signout()">LOGOUT</a></div></div>';
 		setdata(loggedin);
 	}
 	else{
